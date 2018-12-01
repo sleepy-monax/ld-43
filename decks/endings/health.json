@@ -17,5 +17,24 @@
         "en": "THE END"
       }
     ]
+  },
+  {
+    "weight": 10000,
+    "requirement":
+    {
+      "equal": {"@nbras":0}
+    },
+    "question":
+    {
+      "fr": "Vous êtes le roi des manchots",
+      "en": "[#]"
+    },
+    "respond":
+    [
+      {
+        "fr": "FIN",
+        "en": "THE END"
+      }
+    ]
   }
 ]

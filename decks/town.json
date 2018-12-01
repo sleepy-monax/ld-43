@@ -90,7 +90,7 @@
         {
           "fr": "Non",
           "en": "[#] 1",
-          "add":{"$int":2}
+          "add":{"$intelligence":2}
         },
         {
           "fr": "Ouais",
@@ -148,7 +148,7 @@
           "en": "[#] 1",
           "add":{"@nbras":1},
           "sub":{"health":1},
-          "add":{"strenght":2}
+          "add":{"$strenght":2}
         },
         {
           "fr": "Non",
@@ -160,7 +160,7 @@
           "en": "[#] 1",
           "sub":{"$intelligence":2},
           "add":{"@nbras":2},
-          "add":{"strenght":3}
+          "add":{"$strenght":3}
         }
     ]
   },
