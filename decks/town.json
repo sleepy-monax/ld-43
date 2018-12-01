@@ -14,6 +14,9 @@
       }
     ]
   },
+
+
+
   {
     "nick": "town_exit",
     "question":
@@ -30,6 +33,9 @@
       }
     ]
   },
+
+
+
   {
     "weight":1,
     "question":
@@ -42,7 +48,7 @@
       {
         "fr": "donner une pièce",
         "en": "[#] 1",
-        "sub":{"$money":1} 
+        "sub":{"$money":1}
       },
       {
         "fr": "vous l'évitez",
@@ -53,20 +59,24 @@
         "en": "[#] 1",
         "sub":{"$strenght":1}
       },
+
+
+
       {
+        "weight":1,
         "question":
         {
-          "fr": "On vous kidnappe vers la forêt",
-          "en": "[#]"
+          "fr": "vous tombez dans les égouts",
+          "en": "[#]",
+          "sub":{"$healt":5}
         },
         "respond":
         [
           {
-            "fr": "...",
-            "en": "[#] 1"
-          }
-        ]
-      }
+            "fr": "Aïe",
+            "en": "[#] 1",
+            "sub":{"$money":1}
+        }
     ]
   }
 ]
