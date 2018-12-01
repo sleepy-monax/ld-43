@@ -50,7 +50,22 @@
       },
       {
         "fr": "vous lui donnez un coup de pied",
-        "en": "[#] 1"
+        "en": "[#] 1",
+        "sub":{"$strenght":1}
+      },
+      {
+        "question":
+        {
+          "fr": "On vous kidnappe vers la forêt",
+          "en": "[#]"
+        },
+        "respond":
+        [
+          {
+            "fr": "...",
+            "en": "[#] 1"
+          }
+        ]
       }
     ]
   }
