@@ -12,7 +12,7 @@ function love.load(arg)
 
   print("Loading fonts...")
 
-  assets_font_alagard = love.graphics.newFont("assets/alagard.ttf", 26)
+  assets_font_romulus_big = love.graphics.newFont("assets/romulus.ttf", 32)
   assets_font_romulus = love.graphics.newFont("assets/romulus.ttf", 26)
 
   print("Loading images...")
@@ -203,7 +203,7 @@ function game_draw()
   -- love.graphics.rectangle("fill", love.graphics.getWidth() / 2 - 200, love.graphics.getHeight() / 2 - 300, 400, 600)
 
   love.graphics.setColor(0,0,0)
-  local text = love.graphics.newText( assets_font_alagard, current_card.question[LANG] )
+  local text = love.graphics.newText( assets_font_romulus_big, current_card.question[LANG] )
   love.graphics.draw(text, love.graphics.getWidth()  / 2 - text:getWidth() / 2,
                            love.graphics.getHeight() / 2 - text:getHeight() / 2)
 
