@@ -132,5 +132,36 @@
           "set":{"@sterile":true}
         }
     ]
+  },
+  
+  {
+      "weight":1,
+      "question":
+      {
+        "fr": "Un médecin se disant chirurgien vous propose de vous greffez un bras",
+        "en": "[#]"
+      },
+      "respond":
+      [
+        {
+          "fr": "Oui",
+          "en": "[#] 1",
+          "add":{"@nbras":1},
+          "sub":{"health":1},
+          "add":{"strenght":2}
+        },
+        {
+          "fr": "Non",
+          "en": "[#] 1",
+          "add":{"$health":2}
+        },
+        {
+          "fr": "Pas deux bras?",
+          "en": "[#] 1",
+          "sub":{"$intelligence":2},
+          "add":{"@nbras":2},
+          "add":{"strenght":3}
+        }
+    ]
   }
 ]
