@@ -20,7 +20,7 @@
         "fr": "...",
         "en": "[#] 1",
         "nextcard":"game_start_1",
-        "unlock":["ending/money"]
+        "unlock":["endings/money", "endings/health"]
       }
     ]
   },
