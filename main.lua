@@ -16,8 +16,6 @@ function love.load(arg)
   assets_font_romulus = love.graphics.newFont("assets/romulus.ttf", 26)
 
   print("Loading images...")
-  assets_card = love.graphics.newImage("assets/card.png")
-
   icons = {}
   local files = love.filesystem.getDirectoryItems("assets/icons")
   for k, file in ipairs(files) do

@@ -1,7 +1,8 @@
 {
-  "$health": 20,
+  "$health": 5,
   "$money": 1,
-  "$intelligence": 20,
+  "$intelligence": 5,
+  "$luck": 5,
 
   "@nbras": 2,
   "@steril": false
