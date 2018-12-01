@@ -1,7 +1,6 @@
 [
   {
-    "nick": "",
-    "weight":10000,
+    "weight": 10000,
     "requirement":
     {
       "lessthanorequal": {"$money":0}

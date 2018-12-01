@@ -42,7 +42,7 @@
       {
         "fr": "donner une pièce",
         "en": "[#] 1",
-        "sub":{"$money":1}
+        "sub":{"$money":1} 
       },
       {
         "fr": "vous l'évitez",
