@@ -61,7 +61,7 @@
     ]
   },
   {
-    "weight":0.2,
+    "weight":0,
     "question":
     {
       "fr": "vous tombez dans les égouts",
@@ -101,7 +101,7 @@
     ]
   },
   {
-      "weight":0.2,
+      "weight":1,
       "question":
       {
         "fr": "Une femme vous accoste avec un bébé, disant qu'il s'agit du vôtre",
@@ -123,7 +123,13 @@
         {
           "fr": "Non",
           "en": "[#] 1",
-          "add":{"$int":2}
+          "add":{"$intelligence":2}
+        },
+        {
+          "fr": "Je suis stérile",
+          "en": "[#] 1",
+          "add":{"$intelligence":4},
+          "add":{"$sterile":1}
         }
     ]
   }
