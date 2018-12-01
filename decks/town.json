@@ -75,5 +75,29 @@
         "sub":{"$healt":5}
       }
     ]
+  },
+
+
+  {
+      "weight":1,
+      "question":
+      {
+        "fr": "Un homme vous propose de l'argent contre votre libertée",
+        "en": "[#]"
+      },
+      "respond":
+      [
+        {
+          "fr": "Non",
+          "en": "[#] 1",
+          "add":{"$int":2}
+        },
+        {
+          "fr": "Ouais",
+          "en": "[#] 1",
+          "add":{"$money":10},
+          "unlock":["slave"]
+        }
+    ]
   }
 ]

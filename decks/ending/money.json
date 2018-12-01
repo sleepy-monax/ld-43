@@ -1,0 +1,21 @@
+[
+  {
+    "weight": 10000,
+    "requirement":
+    {
+      "lessthanorequal": {"$money":0}
+    },
+    "question":
+    {
+      "fr": "Vous êtes si pauvres qu'un mendiant vous vole vos vêtements",
+      "en": "[#]"
+    },
+    "respond":
+    [
+      {
+        "fr": "Ouais!",
+        "en": "[#] 1"
+      }
+    ]
+  }
+]
