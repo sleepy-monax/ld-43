@@ -61,7 +61,7 @@
     ]
   },
   {
-    "weight":1,
+    "weight":0.2,
     "question":
     {
       "fr": "vous tombez dans les égouts",
@@ -72,7 +72,7 @@
       {
         "fr": "Aïe",
         "en": "[#] 1",
-        "sub":{"$healt":5}
+        "sub":{"$health":5}
       }
     ]
   },
@@ -97,6 +97,33 @@
           "en": "[#] 1",
           "add":{"$money":10},
           "unlock":["slave"]
+        }
+    ]
+  },
+  {
+      "weight":0.2,
+      "question":
+      {
+        "fr": "Une femme vous accoste avec un bébé, disant qu'il s'agit du vôtre",
+        "en": "[#]"
+      },
+      "respond":
+      [
+        {
+          "fr": "Oui",
+          "en": "[#] 1",
+          "sub":{"$intelligence":2},
+          "add":{"baby":1}
+        },
+        {
+          "fr": "On se connait?",
+          "en": "[#] 1",
+          "sub":{"$health":2}
+        },
+        {
+          "fr": "Non",
+          "en": "[#] 1",
+          "add":{"$int":2}
         }
     ]
   }
