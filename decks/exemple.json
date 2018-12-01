@@ -1,13 +1,15 @@
 [
   {
     "nick": "mood_question",
-    "pic":"tete",
+    "icon":"tete",
     "weight": 1.0,
     "requirement":
     {
-      "equal": [],
-      "morethan": [],
-      "lessthan": []
+      "equal": {},
+      "morethan": {},
+      "lessthan": {},
+      "morethanorequal": {},
+      "lessthanorequal": {}
     },
     "question":
     {
@@ -24,7 +26,7 @@
         "add":[ { "happiness": 1 } ],
         "unlock": ["happy_people"],
         "lock": [""],
-        "nextcard": "name_question",
+        "nextcard": "name_question"
       },
       {
         "fr": "Mal",
