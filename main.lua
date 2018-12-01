@@ -2,15 +2,11 @@ json = require('libs.json')
 inspect = require('libs.inspect')
 
 DEBUG = true
+LANG = "fr"
 
 function love.load(arg)
   -- Load decks
   game_load()
-
-
-
-
-
 
   love.graphics.setDefaultFilter("nearest", "nearest", 0)
 
@@ -137,8 +133,7 @@ function game_load()
   game_states = {}
 
   deck_unlock("exemple")
-  card = deck_get_nextcard_by_nick("game_start")
-  print(inspect())
+  card = deck_get_nextcard_by_nick("mood_question")
 end
 
 function game_update(dt)
@@ -150,17 +145,20 @@ function game_draw()
   love.graphics.clear(0.094, 0.078, 0.145)
   love.graphics.rectangle("fill", love.graphics.getWidth() / 2 - 128, love.graphics.getHeight() / 2 - 256, 256, 256)
 
-  love.graphics.setLineWidth(2)
+  local text = love.graphics.newText( assets_font_alagard, card.question[LANG] )
+  love.graphics.draw(text, love.graphics.getWidth()  / 2 - text:getWidth() / 2,
+                           love.graphics.getHeight() / 2 - text:getHeight() / 2)
 
-  for i=1,5 do
-    button(love.graphics.getWidth() / 2 - 480/2, love.graphics.getHeight() / 2 + 48 * i, 480, 32, "Lorem ipsum")
+  for i, v in ipairs(card.respond) do
+    button(love.graphics.getWidth() / 2 - 480/2, love.graphics.getHeight() / 2 + 48 * (i + 1), 480, 32, v[LANG])
   end
-
 end
 
 -- UI --------------------------------------------------------------------------
 
 function button(x, y, w, h, text)
+
+  love.graphics.setLineWidth(2)
   if check_collision(x, y, w, h, love.mouse.getX(), love.mouse.getY(), 1, 1) then
     love.graphics.setColor(0.996, 0.682, 0.012, 0.75)
     love.graphics.rectangle("fill", x, y, w, h)

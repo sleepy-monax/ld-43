@@ -13,13 +13,13 @@
     },
     "question":
     {
-      "fr": "Comment vas tu?",
+      "fr": "Comment vas-tu?",
       "en": "How are you?"
     },
     "respond":
     [
       {
-        "fr": "Bien",
+        "fr": "Je me sent bien!",
         "en": "good",
 
         "set":[ { "mood": "good" } ],
@@ -29,7 +29,7 @@
         "nextcard": "name_question"
       },
       {
-        "fr": "Mal",
+        "fr": "Je me sent mal.",
         "en": "Bad",
 
         "set":[ { "mood": "bad" } ],
