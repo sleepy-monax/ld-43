@@ -2,7 +2,7 @@
   {
     "nick": "game_start",
     "icon":"forest",
-    "weight": 0,
+    "weight": -1,
     "requirement":
     {
       "equal": {},
