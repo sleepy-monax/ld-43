@@ -10,8 +10,20 @@ function love.load(arg)
 
   love.graphics.setDefaultFilter("nearest", "nearest", 0)
 
+  print("Loading fonts...")
+
   assets_font_alagard = love.graphics.newFont("assets/alagard.ttf", 26)
   assets_font_romulus = love.graphics.newFont("assets/romulus.ttf", 26)
+
+  print("Loading images...")
+  assets_card = love.graphics.newImage("assets/card.png")
+
+  icons = {}
+  local files = love.filesystem.getDirectoryItems("assets/icons")
+  for k, file in ipairs(files) do
+    icons[file] = love.graphics.newImage("assets/icons/" .. file)
+  	print(k .. ". " .. file)
+  end
 end
 
 function love.update(dt)
@@ -175,11 +187,15 @@ function game_update(dt)
 end
 
 function game_draw()
-  love.graphics.setColor(0, 0, 0, 1)
   love.graphics.clear(0.094, 0.078, 0.145)
-  love.graphics.rectangle("fill", love.graphics.getWidth() / 2 - 128, love.graphics.getHeight() / 2 - 256, 256, 256)
 
-  love.graphics.setColor(1, 0, 0.267)
+  love.graphics.setColor(0, 0, 0, 0.5)
+  love.graphics.draw(assets_card, love.graphics.getWidth() / 2 + 4, love.graphics.getHeight() / 2 + 4, 0, 3, 3, 50, 75)
+  love.graphics.setColor(1, 1, 1, 1)
+  love.graphics.draw(assets_card, love.graphics.getWidth() / 2 , love.graphics.getHeight() / 2, 0, 3, 3, 50, 75)
+  -- love.graphics.rectangle("fill", love.graphics.getWidth() / 2 - 200, love.graphics.getHeight() / 2 - 300, 400, 600)
+
+  love.graphics.setColor(0,0,0)
   local text = love.graphics.newText( assets_font_alagard, current_card.question[LANG] )
   love.graphics.draw(text, love.graphics.getWidth()  / 2 - text:getWidth() / 2,
                            love.graphics.getHeight() / 2 - text:getHeight() / 2)
