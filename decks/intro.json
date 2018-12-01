@@ -21,7 +21,8 @@
       {
         "fr": "Vers la ville",
         "en": "good",
-        "unlock": ["town"]
+        "unlock": ["town"],
+        "nextcard":"town_entry"
       },
       {
         "fr": "Rester dans la forêt",
