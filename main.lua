@@ -46,6 +46,7 @@ function deck_unlock(name)
       decks[name] = deck_data
 
       print("Deck unlocked '" .. name .. "' !")
+      print(inspect(deck_data))
     else
       error("No deck named '" .. name .. "' !")
     end
@@ -80,6 +81,7 @@ function card_valid_morethan(card)
   local r = true
 
   for k,v in pairs(requirements) do
+    if game_states[k] == nil then return false end
     r = r and game_states[k] > v
   end
 
@@ -94,6 +96,7 @@ function card_valid_lessthan(card)
   local r = true
 
   for k,v in pairs(requirements) do
+    if game_states[k] == nil then return false end
     r = r and game_states[k] < v
   end
 
@@ -108,6 +111,7 @@ function card_valid_morethanorequal(card)
   local r = true
 
   for k,v in pairs(requirements) do
+    if game_states[k] == nil then return false end
     r = r and game_states[k] >= v
   end
 
@@ -122,6 +126,7 @@ function card_valid_lessthanorequal(card)
   local r = true
 
   for k,v in pairs(requirements) do
+    if game_states[k] == nil then return false end
     r = r and game_states[k] <= v
   end
 
@@ -134,8 +139,10 @@ function deck_get_nextcard()
 
   for _, deck in pairs(decks) do
     for _, card in ipairs(deck) do
+      print(inspect(card))
       if card.weight ~= nil and card.weight > 0 then
-        if card.requirement == nil or card_valid_equal(cv) and
+        if card.requirement == nil or
+           card_valid_equal(card) and
            card_valid_lessthan(card) and
            card_valid_morethan(card) and
            card_valid_lessthanorequal(card) and
