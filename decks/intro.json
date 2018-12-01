@@ -13,13 +13,13 @@
     },
     "question":
     {
-      "fr": "Vous êtes ",
+      "fr": "Vous êtes une personne pauvres, très pauvres, vous ne possédez rien, vous êtes dans la forêt, proche d'une ville, que faites vous?",
       "en": "How are you?"
     },
     "respond":
     [
       {
-        "fr": "Bien",
+        "fr": "Vers la ville",
         "en": "good",
 
         "set":[ { "mood": "good" } ],
@@ -29,7 +29,7 @@
         "nextcard": "name_question"
       },
       {
-        "fr": "Mal",
+        "fr": "Rester vers la ville",
         "en": "Bad",
 
         "set":[ { "mood": "bad" } ],

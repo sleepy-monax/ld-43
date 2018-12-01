@@ -1,0 +1,104 @@
+[
+  {
+    "nick": "mood_question",
+    "icon":"tete",
+    "weight": 1.0,
+    "requirement":
+    {
+      "equal": {},
+      "morethan": {},
+      "lessthan": {},
+      "morethanorequal": {},
+      "lessthanorequal": {}
+    },
+    "question":
+    {
+      "fr": "Vous êtes dans les ruelles à l'entrée de la ville, vous arrivez à un carrefour menant à quatres direction",
+      "en": "How are you?"
+    },
+    "respond":
+    [
+      {
+        "fr": "Allez vers la forêt",
+        "en": "good",
+
+        "set":[ { "mood": "good" } ],
+        "add":[ { "happiness": 1 } ],
+        "unlock": ["happy_people"],
+        "lock": [""],
+        "nextcard": "name_question"
+      },
+      {
+        "fr": "Allez vers l'allée commerçante",
+        "en": "Bad",
+
+        "set":[ { "mood": "bad" } ],
+        "sub":[ { "happiness": 1 } ],
+        "unlock": ["sad_people"]
+      },
+      {
+        "fr": "Allez vers le chateau",
+        "en": "Bad",
+
+        "set":[ { "mood": "bad" } ],
+        "sub":[ { "happiness": 1 } ],
+        "unlock": ["sad_people"]
+      },
+      {
+        "fr": " Allez vers la fontaine",
+        "en": "Bad",
+
+        "set":[ { "mood": "bad" } ],
+        "sub":[ { "happiness": 1 } ],
+        "unlock": ["sad_people"]
+      }
+    ]
+  },
+  {
+      "nick": "rue_commercante",
+      "icon":"tete",
+      "weight": 1.0,
+      "requirement":
+      {
+        "equal": {},
+        "morethan": {},
+        "lessthan": {},
+        "morethanorequal": {},
+        "lessthanorequal": {}
+      },
+      "question":
+      {
+        "fr": "Trois stand apparaissent devant vous, vers lequel allez vous?",
+        "en": "How are you?"
+      },
+      "respond":
+      [
+        {
+          "fr": "Stand d'armes",
+          "en": "good",
+
+          "set":[ { "mood": "good" } ],
+          "add":[ { "happiness": 1 } ],
+          "unlock": ["happy_people"],
+          "lock": [""],
+          "nextcard": "name_question"
+        },
+        {
+          "fr": "Stand de nourriture de viande",
+          "en": "Bad",
+
+          "set":[ { "mood": "bad" } ],
+          "sub":[ { "happiness": 1 } ],
+          "unlock": ["sad_people"]
+        },
+        {
+          "fr": "Stand de nourriture de légumes",
+          "en": "Bad",
+
+          "set":[ { "mood": "bad" } ],
+          "sub":[ { "happiness": 1 } ],
+          "unlock": ["sad_people"]
+        }
+      ]
+    }
+]
