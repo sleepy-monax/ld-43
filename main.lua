@@ -15,11 +15,12 @@ function love.load(arg)
 end
 
 function love.update(dt)
+  mouse_update()
   game_update(dt)
 end
 
 function love.draw()
-    game_draw()
+  game_draw()
 end
 
 -- Deck Managments -------------------------------------------------------------
@@ -31,6 +32,10 @@ function deck_unlock(name)
 
     decks[name] = deck_data
   end
+end
+
+function deck_lock(name)
+  decks[name] = nil
 end
 
 function card_valid_equal(card)
@@ -132,8 +137,8 @@ function game_load()
   decks = {}
   game_states = {}
 
-  deck_unlock("exemple")
-  card = deck_get_nextcard_by_nick("mood_question")
+  deck_unlock("intro")
+  card = deck_get_nextcard_by_nick("game_start")
 end
 
 function game_update(dt)
@@ -145,18 +150,74 @@ function game_draw()
   love.graphics.clear(0.094, 0.078, 0.145)
   love.graphics.rectangle("fill", love.graphics.getWidth() / 2 - 128, love.graphics.getHeight() / 2 - 256, 256, 256)
 
+  love.graphics.setColor(1, 0, 0.267)
   local text = love.graphics.newText( assets_font_alagard, card.question[LANG] )
   love.graphics.draw(text, love.graphics.getWidth()  / 2 - text:getWidth() / 2,
                            love.graphics.getHeight() / 2 - text:getHeight() / 2)
 
-  for i, v in ipairs(card.respond) do
-    button(love.graphics.getWidth() / 2 - 480/2, love.graphics.getHeight() / 2 + 48 * (i + 1), 480, 32, v[LANG])
+  for i, respond in ipairs(card.respond) do
+    if button(love.graphics.getWidth() / 2 - 480/2, love.graphics.getHeight() / 2 + 48 * (i + 1), 480, 32, respond[LANG]) then
+      -- Set game states
+      if respond.set ~= nil then
+        for k,v in pairs(respond.set) do
+          game_states[k] = v
+        end
+      end
+
+      -- Add game states
+      if respond.add ~= nil then
+        for k,v in pairs(respond.add) do
+          print(k .. ":".. v)
+          if game_states[k] == nil then
+            game_states[k] = v
+          else
+            game_states[k] = game_states[k] + v
+          end
+        end
+      end
+
+      -- Substract game states
+      if respond.sub ~= nil then
+        for k,v in pairs(respond.sub) do
+          print(k .. ":".. v)
+          if game_states[k] == nil then
+            game_states[k] = -v
+          else
+            game_states[k] = game_states[k] - v
+          end
+        end
+      end
+
+      -- Unlock decks
+      if respond.unlock ~= nil then
+        for i,v in ipairs(respond.unlock) do
+          deck_unlock(v)
+        end
+      end
+
+      -- lock decks
+      if respond.lock ~= nil then
+        for i,v in ipairs(respond.lock) do
+          deck_lock(v)
+        end
+      end
+
+      -- get the next card
+      if respond.nextcard ~= nil then
+        card = deck_get_nextcard_by_nick(respond.nextcard)
+      else
+        card = deck_get_nextcard()
+      end
+
+    end
   end
 end
 
 -- UI --------------------------------------------------------------------------
 
 function button(x, y, w, h, text)
+
+  -- local dist = distance(x + w / 2, y + h / 2, love.mouse.getX(), love.mouse.getY())
 
   love.graphics.setLineWidth(2)
   if check_collision(x, y, w, h, love.mouse.getX(), love.mouse.getY(), 1, 1) then
@@ -176,14 +237,29 @@ function button(x, y, w, h, text)
   love.graphics.draw(text, x + w / 2 - text:getWidth() / 2,
                            y + h / 2 - text:getHeight() / 2 + 2)
 
-   return check_collision(x, y, w, h, love.mouse.getX(), love.mouse.getY(), 1, 1) and love.mouse.isDown(1)
+   return check_collision(x, y, w, h, love.mouse.getX(), love.mouse.getY(), 1, 1) and mouse_click()
 end
 
 -- Utils -----------------------------------------------------------------------
+
+function distance ( x1, y1, x2, y2 )
+  local dx = x1 - x2
+  local dy = y1 - y2
+  return math.sqrt ( dx * dx + dy * dy )
+end
 
 function check_collision(x1,y1,w1,h1, x2,y2,w2,h2)
   return x1 < x2+w2 and
          x2 < x1+w1 and
          y1 < y2+h2 and
          y2 < y1+h1
+end
+
+function mouse_update()
+  old_mouse_lclick = mouse_lclick
+  mouse_lclick = love.mouse.isDown(1)
+end
+
+function mouse_click()
+  return mouse_lclick and not old_mouse_lclick
 end

@@ -1,7 +1,7 @@
 [
   {
-    "nick": "mood_question",
-    "icon":"tete",
+    "nick": "",
+    "icon":"null",
     "weight": 1.0,
     "requirement":
     {
@@ -13,28 +13,18 @@
     },
     "question":
     {
-      "fr": "Comment vas-tu?",
-      "en": "How are you?"
+      "fr": "[#]",
+      "en": "[#]"
     },
     "respond":
     [
       {
-        "fr": "Je me sent bien!",
-        "en": "good",
-
-        "set":[ { "mood": "good" } ],
-        "add":[ { "happiness": 1 } ],
-        "unlock": ["happy_people"],
-        "lock": [""],
-        "nextcard": "name_question"
+        "fr": "[#] 1",
+        "en": "[#] 1",
       },
       {
-        "fr": "Je me sent mal.",
-        "en": "Bad",
-
-        "set":[ { "mood": "bad" } ],
-        "sub":[ { "happiness": 1 } ],
-        "unlock": ["sad_people"]
+        "fr": "[#] 2",
+        "en": "[#] 2",
       }
     ]
   }

@@ -21,13 +21,11 @@
       {
         "fr": "Vers la ville",
         "en": "good",
-
-        "unlock": ["town"],
+        "unlock": ["town"]
       },
       {
         "fr": "Rester dans la forêt",
         "en": "Bad",
-
         "unlock": ["forest"]
       }
     ]
