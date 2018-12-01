@@ -16,7 +16,6 @@
   },
   {
     "nick": "town_exit",
-    "weight": 10,
     "question":
     {
       "fr": "Vous quittez la ville...",
@@ -28,6 +27,30 @@
         "fr": "Bye bye",
         "en": "[#] 1",
         "lock": ["town"]
+      }
+    ]
+  },
+  {
+    "weight":1,
+    "question":
+    {
+      "fr": "Un mendiant vous accoste",
+      "en": "[#]"
+    },
+    "respond":
+    [
+      {
+        "fr": "donner une pièce",
+        "en": "[#] 1",
+        "sub":{"$money":1}
+      },
+      {
+        "fr": "vous l'évitez",
+        "en": "[#] 2"
+      },
+      {
+        "fr": "vous lui donnez un coup de pied",
+        "en": "[#] 1"
       }
     ]
   }
