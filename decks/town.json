@@ -163,5 +163,45 @@
           "add":{"strenght":3}
         }
     ]
+  },
+  {
+      "weight":10,
+      "question":
+      {
+        "fr": "Vous vous promenez en ville",
+        "en": "[#]"
+      },
+    "respond":
+    [
+      {
+        "fr": "Pumpulu",
+        "en": "[#] 1"
+      }
+    ]
+  },
+  {
+      "weight":2,
+      "question":
+      {
+        "fr": "une série de chats vous regardent, l'air affamé",
+        "en": "[#]"
+      },
+    "respond":
+    [
+      {
+        "fr": "Vous fuyez",
+        "en": "[#] 1"
+      },
+      {
+        "fr": "Vous vous positionnez, prêts à tout encaisser",
+        "en": "[#] 1",
+        "sub":{"$intelligence":2}
+      },
+      {
+        "fr": "Vous aboyez",
+        "en": "[#] 1",
+        "sub":{"$intelligence":4}
+      }
+    ]
   }
 ]
