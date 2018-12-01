@@ -129,7 +129,7 @@
           "fr": "Je suis stérile",
           "en": "[#] 1",
           "add":{"$intelligence":4},
-          "add":{"$sterile":1}
+          "set":{"@sterile":true}
         }
     ]
   }
