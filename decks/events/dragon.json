@@ -1,0 +1,23 @@
+[
+  {
+    "nick" : "event_dragon_entry",
+    "weight" : 0.1,
+
+    "question":
+    {
+      "fr": "Un dragon!",
+      "en": "[#]"
+    },
+    "respond":
+    [
+      {
+        "fr": "Attaquer",
+        "en": "[#] 1",
+      },
+      {
+        "fr": "Fuir",
+        "en": "[#] 2",
+      }
+    ]
+  }
+]

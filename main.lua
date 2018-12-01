@@ -32,6 +32,8 @@ function deck_unlock(name)
       local deck_data = json.decode(deck_json)
 
       decks[name] = deck_data
+
+      print("Deck unlocked '" .. name .. "' !")
     else
       error("No deck named '" .. name .. "' !")
     end
@@ -40,11 +42,15 @@ function deck_unlock(name)
 end
 
 function deck_lock(name)
+  print("Deck locked '" .. name .. "' !")
   decks[name] = nil
 end
 
 function card_valid_equal(card)
   local requirements = card.requirement.equal
+
+  if (requirements == nil) then return true end
+
   local r = true
 
   for k,v in pairs(requirements) do
@@ -56,6 +62,9 @@ end
 
 function card_valid_morethan(card)
   local requirements = card.requirement.morethan
+
+  if (requirements == nil) then return true end
+
   local r = true
 
   for k,v in pairs(requirements) do
@@ -67,6 +76,9 @@ end
 
 function card_valid_lessthan(card)
   local requirements = card.requirement.lessthan
+
+  if (requirements == nil) then return true end
+
   local r = true
 
   for k,v in pairs(requirements) do
@@ -78,6 +90,9 @@ end
 
 function card_valid_morethanorequal(card)
   local requirements = card.requirement.morethanorequal
+
+  if (requirements == nil) then return true end
+
   local r = true
 
   for k,v in pairs(requirements) do
@@ -89,6 +104,9 @@ end
 
 function card_valid_lessthanorequal(card)
   local requirements = card.requirement.lessthanorequal
+
+  if (requirements == nil) then return true end
+
   local r = true
 
   for k,v in pairs(requirements) do
@@ -102,19 +120,19 @@ function deck_get_nextcard()
   local valid_card = {}
   local sum_weight = 0
 
-  for dk, dv in pairs(decks) do
-    for ci,cv in ipairs(dv) do
-      if card.requirement ~= nil and (card.weight ~= nil and card.weight ~=-1) then
-        if card_valid_equal(cv) and
-           card_valid_lessthan(cv) and
-           card_valid_morethan(cv) and
-           card_valid_lessthanorequal(cv) and
-           card_valid_morethanorequal(cv) then
-             table.insert(valid_card, cv)
-             sum_weight = sum_weight + cv.weight
+  for _, deck in pairs(decks) do
+    for _, card in ipairs(deck) do
+      if card.weight ~= nil and card.weight > 0 then
+        if card.requirement == nil or card_valid_equal(cv) and
+           card_valid_lessthan(card) and
+           card_valid_morethan(card) and
+           card_valid_lessthanorequal(card) and
+           card_valid_morethanorequal(card) then
+
+           table.insert(valid_card, card)
+           sum_weight = sum_weight + card.weight
         end
       end
-
     end
   end
 
@@ -149,7 +167,7 @@ function game_load()
   game_states = {}
 
   deck_unlock("intro")
-  card = deck_get_nextcard_by_nick("game_start")
+  current_card = deck_get_nextcard_by_nick("game_start")
 end
 
 function game_update(dt)
@@ -162,12 +180,14 @@ function game_draw()
   love.graphics.rectangle("fill", love.graphics.getWidth() / 2 - 128, love.graphics.getHeight() / 2 - 256, 256, 256)
 
   love.graphics.setColor(1, 0, 0.267)
-  local text = love.graphics.newText( assets_font_alagard, card.question[LANG] )
+  local text = love.graphics.newText( assets_font_alagard, current_card.question[LANG] )
   love.graphics.draw(text, love.graphics.getWidth()  / 2 - text:getWidth() / 2,
                            love.graphics.getHeight() / 2 - text:getHeight() / 2)
 
-  for i, respond in ipairs(card.respond) do
+  for i, respond in ipairs(current_card.respond) do
     if button(love.graphics.getWidth() / 2 - 480/2, love.graphics.getHeight() / 2 + 48 * (i + 1), 480, 32, respond[LANG]) then
+      print(inspect(respond))
+
       -- Set game states
       if respond.set ~= nil then
         for k,v in pairs(respond.set) do
@@ -216,9 +236,9 @@ function game_draw()
 
       -- get the next card
       if respond.nextcard ~= nil then
-        card = deck_get_nextcard_by_nick(respond.nextcard)
+        current_card = deck_get_nextcard_by_nick(respond.nextcard)
       else
-        card = deck_get_nextcard()
+        current_card = deck_get_nextcard()
       end
 
       print(inspect(game_states))

@@ -1,8 +1,6 @@
 [
   {
     "nick": "game_start",
-    "icon":"forest",
-    "weight": -1,
     "requirement":
     {
       "equal": {},
@@ -13,20 +11,45 @@
     },
     "question":
     {
-      "fr": "Vous êtes une personne pauvres, très pauvres, vous ne possédez rien, vous êtes dans la forêt, proche d'une ville, que faites vous?",
+      "fr": "Vous êtes une personne pauvres, très pauvres, vous ne possédez rien,",
+      "en": "[#]"
+    },
+    "respond":
+    [
+      {
+        "fr": "...",
+        "en": "[#] 1",
+        "nextcard":"game_start_1"
+      }
+    ]
+  },
+  {
+    "nick": "game_start_1",
+    "icon":"forest",
+    "requirement":
+    {
+      "equal": {},
+      "morethan": {},
+      "lessthan": {},
+      "morethanorequal": {},
+      "lessthanorequal": {}
+    },
+    "question":
+    {
+      "fr": "Vous êtes dans la forêt, proche d'une ville",
       "en": "How are you?"
     },
     "respond":
     [
       {
-        "fr": "Vers la ville",
-        "en": "good",
+        "fr": "Marcher vers la ville",
+        "en": "[#]",
         "unlock": ["town"],
         "nextcard":"town_entry"
       },
       {
         "fr": "Rester dans la forêt",
-        "en": "Bad",
+        "en": "[#]",
         "unlock": ["forest"]
       }
     ]

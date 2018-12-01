@@ -1,140 +1,33 @@
 [
   {
     "nick": "town_entry",
-    "icon":"tete",
-    "weight": 1.0,
-    "requirement":
-    {
-      "equal": {},
-      "morethan": {},
-      "lessthan": {},
-      "morethanorequal": {},
-      "lessthanorequal": {}
-    },
     "question":
     {
-      "fr": "Vous êtes dans les ruelles à l'entrée de la ville, vous arrivez à un carrefour menant à quatres direction",
-      "en": "How are you?"
+      "fr": "Vous entrez dans la ville...",
+      "en": "[#]"
     },
     "respond":
     [
       {
-        "fr": "Allez vers la forêt",
-        "en": "good"
-      },
-      {
-        "fr": "Allez vers l'allée commerçante",
-        "en": "Bad"
-
-      },
-      {
-        "fr": "Allez vers le chateau",
-        "en": "Bad",
-
-        "unlock": ["sad_people"]
-      },
-      {
-        "fr": " Allez vers la fontaine",
-        "en": "Bad",
-
-        "set": { "mood": "bad" } ,
-        "sub": { "happiness": 1 } ,
-        "unlock": ["sad_people"]
+        "fr": "C'est joli",
+        "en": "[#] 1"
       }
     ]
   },
   {
-      "nick": "rue_commercante",
-      "icon":"tete",
-      "weight": 1.0,
-      "requirement":
-      {
-        "equal": {},
-        "morethan": {},
-        "lessthan": {},
-        "morethanorequal": {},
-        "lessthanorequal": {}
-      },
-      "question":
-      {
-        "fr": "Trois stands apparaissent devant vous, vers lequel allez vous?",
-        "en": "How are you?"
-      },
-      "respond":
-      [
-        {
-          "fr": "Stand d'armes",
-          "en": "good",
-
-          "set": { "mood": "good" } ,
-          "add": { "happiness": 1 } ,
-          "unlock": ["happy_people"],
-          "lock": [""],
-          "nextcard": "stand_armes_ville"
-        },
-        {
-          "fr": "Stand de nourriture de viande",
-          "en": "Bad",
-
-          "set": { "mood": "bad" } ,
-          "sub": { "happiness": 1 } ,
-          "unlock": ["sad_people"]
-        },
-        {
-          "fr": "Stand de nourriture de légumes",
-          "en": "Bad",
-
-          "set": { "mood": "bad" } ,
-          "sub": { "happiness": 1 } ,
-          "unlock": ["sad_people"]
-        }
-      ]
-    },
+    "nick": "town_exit",
+    "weight": 10,
+    "question":
     {
-          "nick": "stand_armes_ville",
-          "icon":"tete",
-          "weight": 1.0,
-          "requirement":
-          {
-            "equal": {},
-            "morethan": {},
-            "lessthan": {},
-            "morethanorequal": {},
-            "lessthanorequal": {}
-      },
-
-      "question":
-      {
-        "fr": "Trois stands apparaissent devant vous, vers lequel allez vous?",
-        "en": "How are you?"
-      },
+      "fr": "Vous quittez la ville...",
+      "en": "[#]"
+    },
     "respond":
     [
       {
-        "fr": "Voler?",
-        "en": "good",
-
-        "set":{ "mood": "good" } ,
-        "add":{ "happiness": 1 } ,
-        "unlock": ["happy_people"],
-        "lock": [""],
-        "nextcard": "name_question"
-      },
-      {
-        "fr": "Troquer?",
-        "en": "Bad",
-
-        "set":{ "mood": "bad" },
-        "sub":{ "happiness": 1 },
-        "unlock": ["sad_people"]
-      },
-      {
-        "fr": "rien",
-        "en": "Bad",
-
-        "set": { "mood": "bad" } ,
-        "sub": { "happiness": 1 } ,
-        "unlock": ["sad_people"]
+        "fr": "Bye bye",
+        "en": "[#] 1",
+        "lock": ["town"]
       }
     ]
   }
