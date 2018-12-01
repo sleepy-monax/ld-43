@@ -104,7 +104,7 @@ function deck_get_nextcard()
 
   for dk, dv in pairs(decks) do
     for ci,cv in ipairs(dv) do
-      if card.requirement ~= nil then
+      if card.requirement ~= nil and (card.weight ~= nil and card.weight ~=-1) then
         if card_valid_equal(cv) and
            card_valid_lessthan(cv) and
            card_valid_morethan(cv) and
