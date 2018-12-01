@@ -27,11 +27,16 @@ end
 
 function deck_unlock(name)
   if decks[name] == nil then
-    local deck_json = love.filesystem.read("decks/" .. name .. ".json")
-    local deck_data = json.decode(deck_json)
+    if love.filesystem.exists("decks/" .. name .. ".json") then
+      local deck_json = love.filesystem.read("decks/" .. name .. ".json")
+      local deck_data = json.decode(deck_json)
 
-    decks[name] = deck_data
+      decks[name] = deck_data
+    else
+      error("No deck named '" .. name .. "' !")
+    end
   end
+
 end
 
 function deck_lock(name)
@@ -99,15 +104,17 @@ function deck_get_nextcard()
 
   for dk, dv in pairs(decks) do
     for ci,cv in ipairs(dv) do
-
-      if card_valid_equal(cv) and
-         card_valid_lessthan(cv) and
-         card_valid_morethan(cv) and
-         card_valid_lessthanorequal(cv) and
-         card_valid_morethanorequal(cv) then
-           table.insert(valid_card, cv)
-           sum_weight = sum_weight + cv.weight
+      if card.requirement ~= nil then
+        if card_valid_equal(cv) and
+           card_valid_lessthan(cv) and
+           card_valid_morethan(cv) and
+           card_valid_lessthanorequal(cv) and
+           card_valid_morethanorequal(cv) then
+             table.insert(valid_card, cv)
+             sum_weight = sum_weight + cv.weight
+        end
       end
+
     end
   end
 
@@ -119,6 +126,8 @@ function deck_get_nextcard()
       return card
     end
   end
+
+  error("Out of card")
 end
 
 function deck_get_nextcard_by_nick(nick)
@@ -129,6 +138,8 @@ function deck_get_nextcard_by_nick(nick)
       end
     end
   end
+
+  error("No card named " .. nick .. "!")
 end
 
 -- GAME ------------------------------------------------------------------------
@@ -160,6 +171,7 @@ function game_draw()
       -- Set game states
       if respond.set ~= nil then
         for k,v in pairs(respond.set) do
+          print("set ".. k .. ":" .. v)
           game_states[k] = v
         end
       end
@@ -167,7 +179,7 @@ function game_draw()
       -- Add game states
       if respond.add ~= nil then
         for k,v in pairs(respond.add) do
-          print(k .. ":".. v)
+          print("add ".. k .. ":" .. v)
           if game_states[k] == nil then
             game_states[k] = v
           else
@@ -179,7 +191,7 @@ function game_draw()
       -- Substract game states
       if respond.sub ~= nil then
         for k,v in pairs(respond.sub) do
-          print(k .. ":".. v)
+          print("sub ".. k .. ":" .. v)
           if game_states[k] == nil then
             game_states[k] = -v
           else
@@ -209,6 +221,7 @@ function game_draw()
         card = deck_get_nextcard()
       end
 
+      print(inspect(game_states))
     end
   end
 end

@@ -37,8 +37,8 @@
         "fr": " Allez vers la fontaine",
         "en": "Bad",
 
-        "set":[ { "mood": "bad" } ],
-        "sub":[ { "happiness": 1 } ],
+        "set": { "mood": "bad" } ,
+        "sub": { "happiness": 1 } ,
         "unlock": ["sad_people"]
       }
     ]
@@ -66,8 +66,8 @@
           "fr": "Stand d'armes",
           "en": "good",
 
-          "set":[ { "mood": "good" } ],
-          "add":[ { "happiness": 1 } ],
+          "set": { "mood": "good" } ,
+          "add": { "happiness": 1 } ,
           "unlock": ["happy_people"],
           "lock": [""],
           "nextcard": "stand_armes_ville"
@@ -76,16 +76,16 @@
           "fr": "Stand de nourriture de viande",
           "en": "Bad",
 
-          "set":[ { "mood": "bad" } ],
-          "sub":[ { "happiness": 1 } ],
+          "set": { "mood": "bad" } ,
+          "sub": { "happiness": 1 } ,
           "unlock": ["sad_people"]
         },
         {
           "fr": "Stand de nourriture de légumes",
           "en": "Bad",
 
-          "set":[ { "mood": "bad" } ],
-          "sub":[ { "happiness": 1 } ],
+          "set": { "mood": "bad" } ,
+          "sub": { "happiness": 1 } ,
           "unlock": ["sad_people"]
         }
       ]
@@ -114,8 +114,8 @@
         "fr": "Voler?",
         "en": "good",
 
-        "set":[ { "mood": "good" } ],
-        "add":[ { "happiness": 1 } ],
+        "set":{ "mood": "good" } ,
+        "add":{ "happiness": 1 } ,
         "unlock": ["happy_people"],
         "lock": [""],
         "nextcard": "name_question"
@@ -124,16 +124,16 @@
         "fr": "Troquer?",
         "en": "Bad",
 
-        "set":[ { "mood": "bad" } ],
-        "sub":[ { "happiness": 1 } ],
+        "set":{ "mood": "bad" },
+        "sub":{ "happiness": 1 },
         "unlock": ["sad_people"]
       },
       {
         "fr": "rien",
         "en": "Bad",
 
-        "set":[ { "mood": "bad" } ],
-        "sub":[ { "happiness": 1 } ],
+        "set": { "mood": "bad" } ,
+        "sub": { "happiness": 1 } ,
         "unlock": ["sad_people"]
       }
     ]
