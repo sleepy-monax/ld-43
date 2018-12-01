@@ -34,7 +34,8 @@
 
         "set":[ { "mood": "bad" } ],
         "sub":[ { "happiness": 1 } ],
-        "unlock": ["sad_people"]
+        "unlock": ["sad_people"],
+        "nextcard": "rue_commercante"
       },
       {
         "fr": "Allez vers le chateau",
@@ -68,7 +69,7 @@
       },
       "question":
       {
-        "fr": "Trois stand apparaissent devant vous, vers lequel allez vous?",
+        "fr": "Trois stands apparaissent devant vous, vers lequel allez vous?",
         "en": "How are you?"
       },
       "respond":
@@ -81,7 +82,7 @@
           "add":[ { "happiness": 1 } ],
           "unlock": ["happy_people"],
           "lock": [""],
-          "nextcard": "name_question"
+          "nextcard": "stand_armes_ville"
         },
         {
           "fr": "Stand de nourriture de viande",
@@ -100,5 +101,53 @@
           "unlock": ["sad_people"]
         }
       ]
-    }
+    },
+    {
+          "nick": "stand_armes_ville",
+          "icon":"tete",
+          "weight": 1.0,
+          "requirement":
+          {
+            "equal": {},
+            "morethan": {},
+            "lessthan": {},
+            "morethanorequal": {},
+            "lessthanorequal": {}
+      },
+
+      "question":
+      {
+        "fr": "Trois stands apparaissent devant vous, vers lequel allez vous?",
+        "en": "How are you?"
+      },
+    "respond":
+    [
+      {
+        "fr": "Voler?",
+        "en": "good",
+
+        "set":[ { "mood": "good" } ],
+        "add":[ { "happiness": 1 } ],
+        "unlock": ["happy_people"],
+        "lock": [""],
+        "nextcard": "name_question"
+      },
+      {
+        "fr": "Troquer?",
+        "en": "Bad",
+
+        "set":[ { "mood": "bad" } ],
+        "sub":[ { "happiness": 1 } ],
+        "unlock": ["sad_people"]
+      },
+      {
+        "fr": "rien",
+        "en": "Bad",
+
+        "set":[ { "mood": "bad" } ],
+        "sub":[ { "happiness": 1 } ],
+        "unlock": ["sad_people"]
+      }
+    ]
+  }
 ]

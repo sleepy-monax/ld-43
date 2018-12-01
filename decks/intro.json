@@ -22,19 +22,13 @@
         "fr": "Vers la ville",
         "en": "good",
 
-        "set":[ { "mood": "good" } ],
-        "add":[ { "happiness": 1 } ],
-        "unlock": ["happy_people"],
-        "lock": [""],
-        "nextcard": "name_question"
+        "unlock": ["town"],
       },
       {
-        "fr": "Rester vers la ville",
+        "fr": "Rester dans la forêt",
         "en": "Bad",
 
-        "set":[ { "mood": "bad" } ],
-        "sub":[ { "happiness": 1 } ],
-        "unlock": ["sad_people"]
+        "unlock": ["forest"]
       }
     ]
   }
