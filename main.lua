@@ -181,7 +181,9 @@ end
 
 function game_load()
   decks = {}
-  game_states = {}
+
+  local game_states_json = love.filesystem.read("game_states.json")
+  game_states = json.decode(game_states_json)
 
   deck_unlock("intro")
   deck_unlock("endings/money")
@@ -196,6 +198,14 @@ end
 function game_draw()
   love.graphics.clear(0.094, 0.078, 0.145)
 
+
+  if DEBUG then
+    local i = 0
+    for k,v in pairs(game_states) do
+      love.graphics.print(k .. " : " .. tostring(v), 16, 16 + 16 * i)
+      i = i + 1
+    end
+  end
 
   love.graphics.setColor(1,1,1)
   local text = love.graphics.newText( assets_font_romulus_big, current_card.question[LANG] )
