@@ -35,7 +35,6 @@
   },
 
 
-
   {
     "weight":1,
     "question":
@@ -58,25 +57,23 @@
         "fr": "vous lui donnez un coup de pied",
         "en": "[#] 1",
         "sub":{"$strenght":1}
-      },
-
-
-
+      }
+    ]
+  },
+  {
+    "weight":1,
+    "question":
+    {
+      "fr": "vous tombez dans les égouts",
+      "en": "[#]"
+    },
+    "respond":
+    [
       {
-        "weight":1,
-        "question":
-        {
-          "fr": "vous tombez dans les égouts",
-          "en": "[#]",
-          "sub":{"$healt":5}
-        },
-        "respond":
-        [
-          {
-            "fr": "Aïe",
-            "en": "[#] 1",
-            "sub":{"$money":1}
-        }
+        "fr": "Aïe",
+        "en": "[#] 1",
+        "sub":{"$healt":5}
+      }
     ]
   }
 ]
