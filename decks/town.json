@@ -45,16 +45,16 @@
     "respond":
     [
       {
-        "fr": "donner une pièce",
+        "fr": "Donner une pièce",
         "en": "[#] 1",
         "sub":{"$money":1}
       },
       {
-        "fr": "vous l'évitez",
+        "fr": "L'éviter",
         "en": "[#] 2"
       },
       {
-        "fr": "vous lui donnez un coup de pied",
+        "fr": "Donner un coup de pied",
         "en": "[#] 1",
         "sub":{"$strenght":1}
       }
