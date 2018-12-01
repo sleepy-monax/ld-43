@@ -1,0 +1,21 @@
+[
+  {
+    "weight": 10000,
+    "requirement":
+    {
+      "lessthanorequal": {"$health":0}
+    },
+    "question":
+    {
+      "fr": "Vous êtes mort",
+      "en": "[#]"
+    },
+    "respond":
+    [
+      {
+        "fr": "FIN",
+        "en": "THE END"
+      }
+    ]
+  }
+]
