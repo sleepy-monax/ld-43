@@ -1,0 +1,26 @@
+[
+  {
+    "nick": "",
+    "weight":10000,
+    "requirement":
+    {
+      "lessthanorequal": {"$money":0}
+    },
+    "question":
+    {
+      "fr": "[#]",
+      "en": "[#]"
+    },
+    "respond":
+    [
+      {
+        "fr": "[#] 1",
+        "en": "[#] 1"
+      },
+      {
+        "fr": "[#] 2",
+        "en": "[#] 2"
+      }
+    ]
+  }
+]
