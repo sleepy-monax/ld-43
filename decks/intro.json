@@ -1,0 +1,41 @@
+[
+  {
+    "nick": "game_start",
+    "icon":"forest",
+    "weight": 0,
+    "requirement":
+    {
+      "equal": {},
+      "morethan": {},
+      "lessthan": {},
+      "morethanorequal": {},
+      "lessthanorequal": {}
+    },
+    "question":
+    {
+      "fr": "Vous êtes ",
+      "en": "How are you?"
+    },
+    "respond":
+    [
+      {
+        "fr": "Bien",
+        "en": "good",
+
+        "set":[ { "mood": "good" } ],
+        "add":[ { "happiness": 1 } ],
+        "unlock": ["happy_people"],
+        "lock": [""],
+        "nextcard": "name_question"
+      },
+      {
+        "fr": "Mal",
+        "en": "Bad",
+
+        "set":[ { "mood": "bad" } ],
+        "sub":[ { "happiness": 1 } ],
+        "unlock": ["sad_people"]
+      }
+    ]
+  }
+]

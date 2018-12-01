@@ -1,8 +1,16 @@
 json = require('libs.json')
+inspect = require('libs.inspect')
+
+DEBUG = true
 
 function love.load(arg)
   -- Load decks
   game_load()
+
+
+
+
+
 
   love.graphics.setDefaultFilter("nearest", "nearest", 0)
 
@@ -85,11 +93,41 @@ function card_valid_lessthanorequal(card)
 end
 
 function deck_get_nextcard()
+  local valid_card = {}
+  local sum_weight = 0
 
+  for dk, dv in pairs(decks) do
+    for ci,cv in ipairs(dv) do
+
+      if card_valid_equal(cv) and
+         card_valid_lessthan(cv) and
+         card_valid_morethan(cv) and
+         card_valid_lessthanorequal(cv) and
+         card_valid_morethanorequal(cv) then
+           table.insert(valid_card, cv)
+           sum_weight = sum_weight + cv.weight
+      end
+    end
+  end
+
+  local rnd_weight = math.random(0, sum_weight)
+
+  for _,card in ipairs(valid_card) do
+    rnd_weight = rnd_weight - card.weight
+    if rnd_weight <= 0 then
+      return card
+    end
+  end
 end
 
-function deck_get_nextcard_by_nick()
-
+function deck_get_nextcard_by_nick(nick)
+  for _, deck in pairs(decks) do
+    for _, card in ipairs(deck) do
+      if card.nick == nick then
+        return card
+      end
+    end
+  end
 end
 
 -- GAME ------------------------------------------------------------------------
@@ -99,6 +137,8 @@ function game_load()
   game_states = {}
 
   deck_unlock("exemple")
+  card = deck_get_nextcard_by_nick("game_start")
+  print(inspect())
 end
 
 function game_update(dt)
