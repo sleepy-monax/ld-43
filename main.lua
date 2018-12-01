@@ -211,7 +211,7 @@ function game_draw()
       -- Set game states
       if respond.set ~= nil then
         for k,v in pairs(respond.set) do
-          print("set ".. k .. ":" .. v)
+          print("set ".. k .. ":" .. tostring(v))
           game_states[k] = v
         end
       end
