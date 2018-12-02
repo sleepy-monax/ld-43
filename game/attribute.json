@@ -1,7 +1,22 @@
 {
-  "$health": { "fr": "Vie", "en": "Health" },
-  "$money": { "fr": "Argent", "en": "Money" },
-  "$intelligence": { "fr": "Inteligence", "en": "Intelligence" },
-  "$luck": { "fr": "Chance", "en": "Luck" },
-  "$charisma": { "fr": "Charisme", "en": "Charisma" }
+  "$health": {
+    "fr": "Vie",
+    "en": "Health"
+  },
+  "$money": {
+    "fr": "Argent",
+    "en": "Money"
+  },
+  "$intelligence": {
+    "fr": "Inteligence",
+    "en": "Intelligence"
+  },
+  "$luck": {
+    "fr": "Chance",
+    "en": "Luck"
+  },
+  "$charisma": {
+    "fr": "Charisme",
+    "en": "Charisma"
+  }
 }
