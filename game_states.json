@@ -3,6 +3,7 @@
   "$money": 1,
   "$intelligence": 5,
   "$luck": 5,
+  "$charisma": 5,
 
   "@nbras": 2,
   "@steril": false
