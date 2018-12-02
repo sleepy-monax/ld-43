@@ -247,5 +247,25 @@
         "en":"Don't give a fuck"
       }
     ]
+  },
+
+
+  {
+    "weight": 1,
+    "question": {
+      "fr": "Vous trouvez des pommes sur le sol, au pied d'un arbre",
+      "en": "[#]"
+    },
+    "respond": [
+      {
+        "fr": "Vous en mangez une",
+        "en": "[#] 1",
+        "add":{"health":2 , "charisma":2}
+      },
+      {
+        "fr": "continuer son chemin",
+        "en": "[#] 2"
+      }
+    ]
   }
 ]
