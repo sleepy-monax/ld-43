@@ -11,6 +11,8 @@ function love.load(arg)
   deckmanager_init()
   game_load()
 
+  math.randomseed(os.time())
+
   love.graphics.setDefaultFilter("nearest", "nearest", 0)
 
   print("Loading fonts...")

@@ -1,0 +1,32 @@
+[
+  {
+    "weight":1,
+    "question":
+    {
+      "fr": "C'était bon",
+      "en": "[#]"
+    },
+    "respond":
+    [
+      {
+        "fr": "Continuer",
+        "en": "[#] 1"
+      }
+    ]
+  },
+  {
+    "weight":1,
+    "question":
+    {
+      "fr": "Vous avez mal au ventre",
+      "en": "[#]"
+    },
+    "respond":
+    [
+      {
+        "fr": "Ah!",
+        "en": "[#] 1"
+      }
+    ]
+  }
+]

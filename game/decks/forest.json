@@ -35,7 +35,8 @@
     "respond": [
       {
         "fr": "Ah!",
-        "en": "[#]"
+        "en": "[#]",
+        "nextindeck": "events/eat"
       }
     ]
   },
@@ -54,7 +55,8 @@
         },
         "sub": {
           "charisma": 3
-        }
+        },
+        "nextindeck": "events/eat"
       }
     ]
   },
@@ -92,7 +94,8 @@
       },
       {
         "fr": "Vous mangez une pomme d'un arbre en continuant votre chemin",
-        "en": "[#] 2"
+        "en": "[#] 2",
+        "nextindeck": "events/eat"
       }
     ]
   },
@@ -232,7 +235,7 @@
       },
       {
         "fr": "Vous lui donnez un coup de pieds",
-        "en": "[#] 2",
+        "en": "[#] 2"
       },
       {
         "fr": "Vous pliez les genous, frappant dessus pour qu'il vienne vous voir",
@@ -259,7 +262,8 @@
       {
         "fr": "Vous en mangez une",
         "en": "[#] 1",
-        "add":{"health":2 , "charisma":2}
+        "add":{"health":2 , "charisma":2},
+        "nextindeck": "events/eat"
       },
       {
         "fr": "continuer son chemin",
