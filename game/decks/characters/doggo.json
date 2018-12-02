@@ -1,0 +1,29 @@
+[
+  {
+    "weight": 0.1,
+    "requirement":
+    {
+      "equal": {},
+      "morethan": {},
+      "lessthan": {},
+      "morethanorequal": {},
+      "lessthanorequal": {}
+    },
+    "question":
+    {
+      "fr": "Votre chien: 'Wouf!'",
+      "en": "[#]"
+    },
+    "respond":
+    [
+      {
+        "fr": "Le caresser",
+        "en": "[#] 1"
+      },
+      {
+        "fr": "Brave bête",
+        "en": "[#] 2"
+      }
+    ]
+  }
+]
