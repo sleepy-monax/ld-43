@@ -29,7 +29,7 @@
     ]
   },
   {
-    "weight": 1,
+    "weight": 2,
     "question": {
       "fr": "Un mendiant vous accoste",
       "en": "[#]"
@@ -99,7 +99,7 @@
     ]
   },
   {
-    "weight": 1,
+    "weight": 0.5,
     "question": {
       "fr": "Une femme vous accoste avec un bébé, disant qu'il s'agit du vôtre",
       "en": "[#]"
@@ -182,7 +182,7 @@
     ]
   },
   {
-    "weight": 1,
+    "weight": 0.2,
     "question": {
       "fr": "Votre malchance vous conduit dans la chambre d'une femme seule qui hurle",
       "en": "[#]"
@@ -205,33 +205,6 @@
       {
         "fr": "Vous fuyez",
         "en": "[#] 1"
-      }
-    ]
-  },
-  {
-    "weight": 1,
-    "question": {
-      "fr": "Votre malchance vous conduit dans la chambre d'une femme seule qui hurle",
-      "en": "[#]"
-    },
-    "respond": [
-      {
-        "fr": "Vous fuyez",
-        "en": "[#] 1"
-      },
-      {
-        "fr": "Vous criez aussi",
-        "en": "[#] 1",
-        "sub": {
-          "$intelligence": 2
-        }
-      },
-      {
-        "fr": "vous vous cachez sous le lit, au cas où",
-        "en": "[#] 1",
-        "add": {
-          "$intelligence": 4
-        }
       }
     ]
   },
@@ -260,7 +233,7 @@
     ]
   },
   {
-    "weight": 1,
+    "weight": 3,
     "question": {
       "fr": "Un homme vous fonce dessus, vous faisant tomber",
       "en": "[#]"
@@ -305,7 +278,7 @@
         "sub": {
           "$intelligence": 2
         },
-        "unlock":"characters/doctor"
+        "unlock":["characters/doctor"]
       },
       {
         "fr": "Vous l'ignorez",
@@ -324,7 +297,7 @@
     ]
   },
   {
-    "weight": 1,
+    "weight": 0.5,
     "question": {
       "fr": "Vous trouvez 5 pièces sur le sol",
       "en": "[#]"
