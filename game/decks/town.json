@@ -224,8 +224,8 @@
       {
         "fr": "Accepter",
         "en": "[#] 1",
-        "lock": "town",
-        "unlock": "forest"
+        "lock": ["town"],
+        "unlock": ["forest"]
       },
       {
         "fr": "Refuser",

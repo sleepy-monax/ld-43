@@ -149,7 +149,7 @@
       {
         "fr": "Vous êtes prêts à vous battre",
         "en": "[#] 2",
-        "nextindeck": "battle"
+        "nextindeck": "events/battle"
       }
     ]
   },
@@ -161,6 +161,10 @@
     },
     "respond": [
       {
+        "fr": "Continuer votre chemin",
+        "en": "[#] 2"
+      },
+      {
         "fr": "Rentrer en ville",
         "en": "[#] 1",
         "unlock": [
@@ -169,10 +173,6 @@
         "lock": [
           "forest"
         ]
-      },
-      {
-        "fr": "continuer en forêt",
-        "en": "[#] 2"
       }
     ]
   },
@@ -226,16 +226,18 @@
     },
     "respond": [
       {
-        "fr": "Vous tentez de le caresser",
-        "en": "[#] 1"
+        "fr": "Vous le caresser",
+        "en": "[#] 1",
+        "nextindeck": "characters/doggo"
       },
       {
         "fr": "Vous lui donnez un coup de pieds",
-        "en": "[#] 2"
+        "en": "[#] 2",
       },
       {
         "fr": "Vous pliez les genous, frappant dessus pour qu'il vienne vous voir",
-        "en": "[#] 2"
+        "en": "[#] 2",
+        "nextindeck": "characters/doggo"
       },
       {
         "fr": "Vous aboyez",
@@ -247,8 +249,6 @@
       }
     ]
   },
-
-
   {
     "weight": 1,
     "question": {
