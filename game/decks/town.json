@@ -305,7 +305,7 @@
         "sub": {
           "$intelligence": 2
         },
-        "unlock":"characters/doctor"
+        "unlock":["characters/doctor"]
       },
       {
         "fr": "Vous l'ignorez",
