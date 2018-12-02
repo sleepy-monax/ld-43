@@ -17,7 +17,7 @@
     "respond":
     [
       {
-        "fr": "...",
+        "fr": "Cliquer ici pour continuer...",
         "en": "[#] 1",
         "nextcard":"game_start_1"
       }

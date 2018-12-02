@@ -243,31 +243,29 @@ function card_draw()
   -- Render the card title
   local text = love.graphics.newText( assets_font_romulus_big, current_card.question[LANG] )
   love.graphics.setColor(0,0,0, 0.45)
-  love.graphics.draw(text, love.graphics.getWidth()  / 2 - text:getWidth() / 2 + 4,
-                           love.graphics.getHeight() / 2 - text:getHeight() / 2 - 76 + 4)
+  love.graphics.draw(text, love.graphics.getWidth()  / 2 + 4,
+                           love.graphics.getHeight() / 2 - 128 + 4,
+                           0, 1, 1,
+                           text:getWidth() / 2, text:getHeight() / 2)
 
   love.graphics.setColor(1,1,1)
-  love.graphics.draw(text, love.graphics.getWidth()  / 2 - text:getWidth() / 2,
-                           love.graphics.getHeight() / 2 - text:getHeight() / 2 - 76)
+  love.graphics.draw(text, love.graphics.getWidth()  / 2,
+                           love.graphics.getHeight() / 2 - 128,
+                           0, 1, 1,
+                           text:getWidth() / 2, text:getHeight() / 2)
 
   -- Render card option
   love.graphics.setColor(1, 1, 1)
 
   for i, respond in ipairs(current_card.respond) do
     if button(love.graphics.getWidth()  / 2 - (480/2) * (1 - animation),
-              love.graphics.getHeight() / 2 + (48 * (i + 1)) * (1 - animation),
+              love.graphics.getHeight() / 2 + (72 * (i + 1)) * (1 - animation) - 72,
               480 * (1 - animation),
-              32 * (1 - animation), respond[LANG], (1-animation)) then
+              64 * (1 - animation), respond[LANG], (1-animation)) then
       card_do_respond(respond)
 
     end
   end
-end
-
--- background ------------------------------------------------------------------
-
-function background_draw()
-  love.graphics.draw(assets_background, love.graphics.getWidth() / 2, love.graphics.getHeight() / 2, 0, 2, 2, 400, 300)
 end
 
 -- game loop -------------------------------------------------------------------
@@ -293,7 +291,6 @@ end
 function game_draw()
   love.graphics.clear(0.094, 0.078, 0.145)
 
-  background_draw()
   card_draw()
 
   if DEBUG then
