@@ -56,7 +56,7 @@
     ]
   },
   {
-    "weight": 0,
+    "weight": 0.1,
     "question": {
       "fr": "vous tombez dans les égouts",
       "en": "[#]"
@@ -66,7 +66,7 @@
         "fr": "Aïe",
         "en": "[#] 1",
         "sub": {
-          "$health": 5
+          "$health": 1
         }
       }
     ]

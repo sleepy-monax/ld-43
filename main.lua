@@ -138,7 +138,6 @@ function deck_get_nextcard()
 
   for _, deck in pairs(decks) do
     for _, card in ipairs(deck) do
-      print(inspect(card))
       if card.weight ~= nil and card.weight > 0 then
         if card.requirement == nil or
            card_valid_equal(card) and
@@ -242,7 +241,7 @@ function game_draw()
       -- Add game states
       if respond.add ~= nil then
         for k,v in pairs(respond.add) do
-          print("add ".. k .. ":" .. v)
+          print("add ".. k .. ":" .. tostring(v))
           if game_states[k] == nil then
             game_states[k] = v
           else
@@ -254,7 +253,7 @@ function game_draw()
       -- Substract game states
       if respond.sub ~= nil then
         for k,v in pairs(respond.sub) do
-          print("sub ".. k .. ":" .. v)
+          print("sub ".. k .. ":" .. tostring(v))
           if game_states[k] == nil then
             game_states[k] = -v
           else
