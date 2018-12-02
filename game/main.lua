@@ -65,6 +65,8 @@ function deckmanager_load(name)
 end
 
 function deck_unlock(name)
+  print("Deck unlocked '" .. name .. "' !")
+
   if decks[name] == nil then
     decks[name] = deckmanager_load(name)
   end
