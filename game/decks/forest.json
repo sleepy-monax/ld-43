@@ -121,5 +121,126 @@
         "en": "[#] 2"
       }
     ]
+  },
+
+
+  {
+    "weight": 1,
+    "question": {
+      "fr": "Une femme, habillée de cuir, le fouet à la main se rapproche de vous",
+      "en": "[#]"
+    },
+    "respond": [
+      {
+        "fr": "Vous fuyez",
+        "en": "[#] 1"
+      },
+      {
+        "fr": "Vous êtes prêts à lui resister",
+        "en": "[#] 2"
+      },
+      {
+        "fr": "Vous vous laissez faire",
+        "en": "[#] 2"
+      },
+      {
+        "fr": "Vous êtes prêtsà vous battre",
+        "en": "[#] 2"
+      }
+    ]
+  },
+    {
+    "weight": 1,
+    "question": {
+      "fr": "Vous approchez de la ville",
+      "en": "[#]"
+    },
+    "respond": [
+      {
+        "fr": "Rentrer en ville",
+        "en": "[#] 1"
+      },
+      {
+        "fr": "continuer en forêt",
+        "en": "[#] 2"
+      }
+    ]
+  },
+
+
+  {
+    "weight": 1,
+    "question": {
+      "fr": "Des nymphes sont visibles proche d'un lac",
+      "en": "[#]"
+    },
+    "respond": [
+      {
+        "fr": "Vous hurlez pour faire peur",
+        "en": "[#] 1"
+      },
+      {
+        "fr": "Vous tentez de les approcher par furtivitée",
+        "en": "[#] 2"
+      },
+      {
+        "fr": "Courir après elles",
+        "en": "[#] 2"
+      },
+      {
+        "fr": "Meh! (vous continuez votre chemin)",
+        "en": "[#] 2"
+      }
+    ]
+  },
+
+
+  {
+    "weight": 1,
+    "question": {
+      "fr": "Vous trouvez une porte d'acier à moitiée ouverte, menant vers le bas",
+      "en": "[#]"
+    },
+    "respond": [
+      {
+        "fr": "Par curiositée, vous pénétrez dans les lieux",
+        "en": "[#] 1"
+      },
+      {
+        "fr": "Vous ne vous en occupez pas",
+        "en": "[#] 2"
+      }
+    ]
+  },
+
+
+  {
+    "weight": 1,
+    "question": {
+      "fr": "Un chien vous regarde, battant de la queue",
+      "en": "[#]"
+    },
+    "respond": [
+      {
+        "fr": "Vous tentez de le caresser",
+        "en": "[#] 1"
+      },
+      {
+        "fr": "Vous lui donnez un coup de pieds",
+        "en": "[#] 2"
+      },
+      {
+        "fr": "Vous pliez les genous, frappant dessus pour qu'il vienne vous voir",
+        "en": "[#] 2"
+      },
+      {
+        "fr": "Vous aboyez",
+        "en": "[#] 2"
+      },
+      {
+        "fr":"vous l'ignorez",
+        "en":"Don't give a fuck"
+      }
+    ]
   }
 ]
