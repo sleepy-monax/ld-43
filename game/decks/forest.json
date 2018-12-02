@@ -201,7 +201,7 @@
 
 
   {
-    "weight": 1,
+    "weight": 0.2,
     "question": {
       "fr": "Vous trouvez une porte d'acier à moitiée ouverte, menant vers le bas",
       "en": "[#]"

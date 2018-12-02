@@ -304,7 +304,7 @@
     ]
   },
   {
-    "weight": 0.5,
+    "weight":3 ,
     "question": {
       "fr": "Vous êtes proche du château",
       "en": "[#]"
@@ -316,10 +316,6 @@
       },
       {
         "fr": "continuer son chemin",
-        "en": "[#] 1"
-      },
-      {
-        "fr": "ignorer",
         "en": "[#] 1"
       }
     ]
