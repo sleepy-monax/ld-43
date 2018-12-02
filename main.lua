@@ -14,6 +14,7 @@ function love.load(arg)
 
   assets_font_romulus_big = love.graphics.newFont("assets/romulus.ttf", 32)
   assets_font_romulus = love.graphics.newFont("assets/romulus.ttf", 26)
+  assets_background = love.graphics.newImage("assets/background/background.png")
 
   print("Loading images...")
   icons = {}
@@ -198,6 +199,15 @@ end
 
 function game_draw()
   love.graphics.clear(0.094, 0.078, 0.145)
+
+
+  -- Render the background
+
+  offx = ((love.mouse.getX() / 2 - love.graphics.getWidth() / 2) / (love.graphics.getWidth()) + 0.25)
+  offy = ((love.mouse.getY() / 2 - love.graphics.getHeight() / 2) / (love.graphics.getHeight()) + 0.25)
+
+  love.graphics.draw(assets_background, love.graphics.getWidth() / 2 - 32 * offx, love.graphics.getHeight() / 2 - 32 * offy, 0, 2, 2, 400, 300)
+
   animation = animation*0.8
 
   if DEBUG then
@@ -210,11 +220,14 @@ function game_draw()
 
   love.graphics.setColor(1,1,1)
   local text = love.graphics.newText( assets_font_romulus_big, current_card.question[LANG] )
-  love.graphics.draw(text, love.graphics.getWidth()  / 2 - text:getWidth() / 2,
-                           love.graphics.getHeight() / 2 - text:getHeight() / 2 - 76)
+  love.graphics.draw(text, love.graphics.getWidth()  / 2 - text:getWidth() / 2 + 16 * offx,
+                           love.graphics.getHeight() / 2 - text:getHeight() / 2 - 76 + 16 * offy)
 
   for i, respond in ipairs(current_card.respond) do
-    if button(love.graphics.getWidth() / 2 - (480/2) * (1 - animation), love.graphics.getHeight() / 2 + (48 * (i + 1)) * (1 - animation), 480 * (1 - animation), 32 * (1 - animation), respond[LANG]) then
+    if button(love.graphics.getWidth()  / 2 - (480/2) * (1 - animation) + 32 * offx,
+              love.graphics.getHeight() / 2 + (48 * (i + 1)) * (1 - animation) + 32 * offy,
+              480 * (1 - animation),
+              32 * (1 - animation), respond[LANG]) then
       print(inspect(respond))
       animation = 1
 

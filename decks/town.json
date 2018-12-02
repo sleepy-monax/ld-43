@@ -347,7 +347,7 @@
       {
         "fr": "Vous devenez sa femme",
         "en": "[#] 1",
-        "add":{"@Hobbo"}
+        "add":{"@Hobbo":true}
       }
     ]
   },
