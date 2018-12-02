@@ -96,7 +96,6 @@
       }
     ]
   },
-
   {
     "weight": 1,
     "question": {
@@ -122,8 +121,6 @@
       }
     ]
   },
-
-
   {
     "weight": 1,
     "question": {
@@ -138,12 +135,16 @@
       {
         "fr": "Vous êtes prêts à lui resister",
         "en": "[#] 2",
-        "unlock":["slave"]
+        "unlock": [
+          "slave"
+        ]
       },
       {
         "fr": "Vous vous laissez faire",
         "en": "[#] 2",
-        "unlock":["slave"]
+        "unlock": [
+          "slave"
+        ]
       },
       {
         "fr": "Vous êtes prêts à vous battre",
@@ -152,7 +153,7 @@
       }
     ]
   },
-    {
+  {
     "weight": 1,
     "question": {
       "fr": "Vous approchez de la ville",
@@ -162,8 +163,12 @@
       {
         "fr": "Rentrer en ville",
         "en": "[#] 1",
-        "unlock":["town"],
-        "lock":["forest"]
+        "unlock": [
+          "town"
+        ],
+        "lock": [
+          "forest"
+        ]
       },
       {
         "fr": "continuer en forêt",
@@ -171,8 +176,6 @@
       }
     ]
   },
-
-
   {
     "weight": 1,
     "question": {
@@ -198,8 +201,6 @@
       }
     ]
   },
-
-
   {
     "weight": 0.2,
     "question": {
@@ -217,8 +218,6 @@
       }
     ]
   },
-
-
   {
     "weight": 1,
     "question": {
@@ -243,8 +242,8 @@
         "en": "[#] 2"
       },
       {
-        "fr":"vous l'ignorez",
-        "en":"Don't give a fuck"
+        "fr": "Vous l'ignorez",
+        "en": "Don't give a fuck"
       }
     ]
   }
