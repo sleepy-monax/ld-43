@@ -137,15 +137,18 @@
       },
       {
         "fr": "Vous êtes prêts à lui resister",
-        "en": "[#] 2"
+        "en": "[#] 2",
+        "unlock":["slave"]
       },
       {
         "fr": "Vous vous laissez faire",
-        "en": "[#] 2"
+        "en": "[#] 2",
+        "unlock":["slave"]
       },
       {
-        "fr": "Vous êtes prêtsà vous battre",
-        "en": "[#] 2"
+        "fr": "Vous êtes prêts à vous battre",
+        "en": "[#] 2",
+        "nextindeck": "battle"
       }
     ]
   },
@@ -158,7 +161,9 @@
     "respond": [
       {
         "fr": "Rentrer en ville",
-        "en": "[#] 1"
+        "en": "[#] 1",
+        "unlock":["town"],
+        "lock":["forest"]
       },
       {
         "fr": "continuer en forêt",
