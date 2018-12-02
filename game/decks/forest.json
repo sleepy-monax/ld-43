@@ -95,5 +95,31 @@
         "en": "[#] 2"
       }
     ]
+  },
+
+  {
+    "weight": 1,
+    "question": {
+      "fr": "Une Fée cheval se pose sur votre nez",
+      "en": "[#]"
+    },
+    "respond": [
+      {
+        "fr": "Vous tentez de l'écraser avec votre main",
+        "en": "[#] 1"
+      },
+      {
+        "fr": "Vous lui soufflez dessus",
+        "en": "[#] 2"
+      },
+      {
+        "fr": "En la regardant, vous vous prenez un arbre",
+        "en": "[#] 2"
+      },
+      {
+        "fr": "Vous la fixez, les étoiles dans les yeux",
+        "en": "[#] 2"
+      }
+    ]
   }
 ]

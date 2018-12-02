@@ -30,6 +30,30 @@
       "weight":1,
       "question":
       {
+        "fr": "Votre medecin vous mordille la jambe",
+        "en": "[#]"
+      },
+      "respond":
+      [
+        {
+          "fr": "lui souhaiter bon appetit",
+          "en": "[#] 1",
+          "sub":{"$health":2}
+        },
+        {
+        "add":{"charisma":1}
+      },
+        {
+          "fr": "lui donner un coup de pieds",
+          "en": "[#] 1",
+          "sub":{"$strenght":1}
+        }
+    ]
+  },
+  {
+      "weight":1,
+      "question":
+      {
         "fr": "Votre medecin vous propose de vous coupez un bras",
         "en": "[#]"
       },
