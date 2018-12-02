@@ -286,23 +286,8 @@ function game_load()
   deck_unlock("intro")
   deck_unlock("endings/money")
   deck_unlock("endings/health")
-  deck_unlock("town")
+
   current_card = deck_get_nextcard_by_nick("game_start")
-
-  vvv = {}
-
-  for i=1,100000 do
-    local d = deck_get_nextcard()
-    if vvv[d] == nil then
-      vvv[d] = 1
-    else
-      vvv[d] = vvv[d] + 1
-    end
-  end
-
-  for k,v in pairs(vvv) do
-    print(v .. " "..tostring(k.question.fr))
-  end
 end
 
 function game_update(dt)
