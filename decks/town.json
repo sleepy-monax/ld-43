@@ -141,42 +141,6 @@
     ]
   },
   {
-    "weight": 1,
-    "question": {
-      "fr": "Un médecin se disant chirurgien vous propose de vous greffez un bras",
-      "en": "[#]"
-    },
-    "respond": [
-      {
-        "fr": "Oui",
-        "en": "[#] 1",
-        "add": {
-          "$strenght": 2
-        },
-        "sub": {
-          "health": 1
-        }
-      },
-      {
-        "fr": "Non",
-        "en": "[#] 1",
-        "add": {
-          "$health": 2
-        }
-      },
-      {
-        "fr": "Pas deux bras?",
-        "en": "[#] 1",
-        "sub": {
-          "$intelligence": 2
-        },
-        "add": {
-          "$strenght": 3
-        }
-      }
-    ]
-  },
-  {
     "weight": 10,
     "question": {
       "fr": "Vous vous promenez en ville",
@@ -270,108 +234,117 @@
       }
     ]
   },
-
-
-    {
-        "weight":1,
-        "question":
-        {
-          "fr": "Un homme mystérieux se rapproche de vous, vous proposant d'allez en forêt avec lui",
-          "en": "[#]"
-        },
-      "respond":
-      [
-        {
-          "fr": "Accepter",
-          "en": "[#] 1"
-        },
-        {
-          "fr": "Refuser",
-          "en": "[#] 1"
-        },
+  {
+    "weight": 1,
+    "question": {
+      "fr": "Un homme mystérieux se rapproche de vous, vous proposant d'allez en forêt avec lui",
+      "en": "[#]"
+    },
+    "respond": [
+      {
+        "fr": "Accepter",
+        "en": "[#] 1"
+      },
+      {
+        "fr": "Refuser",
+        "en": "[#] 1"
+      },
       {
         "fr": "Vous vous laissez tomber, faisant le mort",
         "en": "[#] 1",
-        "sub":{"$health":4}
+        "sub": {
+          "$health": 4
+        }
       }
     ]
   },
-
-    {
-        "weight":1,
-        "question":
-        {
-          "fr": "Un homme vous fonce dessus, vous faisant tomber",
-          "en": "[#]"
+  {
+    "weight": 10000,
+    "question": {
+      "fr": "Un homme vous fonce dessus, vous faisant tomber",
+      "en": "[#]"
+    },
+    "respond": [
+      {
+        "fr": "Se laissez tomber et hurler à l'aggression",
+        "en": "[#] 1",
+        "add": {
+          "$charisma": 3
         },
-      "respond":
-      [
-        {
-          "fr": "Se laissez tomber et hurler à l'aggression",
-          "en": "[#] 1",
-          "add":{"$charisma":3},
-          "sub":{"health":2}
-        },
-        {
-          "fr": "Vous vous relever sans soucis",
-          "en": "[#] 1",
-          "sub":{"$health":2}
-        },
+        "sub": {
+          "health": 2
+        }
+      },
+      {
+        "fr": "Vous vous relever sans soucis",
+        "en": "[#] 1",
+        "sub": {
+          "$health": 2
+        }
+      },
       {
         "fr": "vous l'attrapez pour le plaquer au sol avec une clée de bras",
         "en": "[#] 1",
-        "add":{"$strength":4}
+        "add": {
+          "$strength": 4
+        }
       }
     ]
   },
-
-    {
-        "weight":1,
-        "question":
-        {
-          "fr": "Un clodo vous interpelle, vous proposant de devenir votre médecin",
-          "en": "[#]"
-        },
-      "respond":
-      [
-        {
-          "fr": "Oui",
-          "en": "[#] 1",
-          "sub":{"$intelligence":2}
-        },
-        {
-          "fr": "Vous l'ignorez",
-          "en": "[#] 1",
-          "add":{"$intelligence":2}
-        },
+  {
+    "weight": 1,
+    "question": {
+      "fr": "Un clodo vous interpelle, vous proposant de devenir votre médecin",
+      "en": "[#]"
+    },
+    "respond": [
+      {
+        "fr": "Oui",
+        "en": "[#] 1",
+        "sub": {
+          "$intelligence": 2
+        }
+      },
+      {
+        "fr": "Vous l'ignorez",
+        "en": "[#] 1",
+        "add": {
+          "$intelligence": 2
+        }
+      },
       {
         "fr": "Vous devenez sa femme",
         "en": "[#] 1",
-        "add":{"@Hobbo":true}
+        "set": {
+          "@Hobbo": true
+        }
       }
     ]
   },
-
-    {
-        "weight":1,
-        "question":
-        {
-          "fr": "Vous trouvez 5 pièces sur le sol",
-          "en": "[#]"
+  {
+    "weight": 1,
+    "question": {
+      "fr": "Vous trouvez 5 pièces sur le sol",
+      "en": "[#]"
+    },
+    "respond": [
+      {
+        "fr": "Prendre",
+        "en": "[#] 1",
+        "add": {
+          "$money": 5
+        }
+      },
+      {
+        "fr": "frappez dedans",
+        "en": "[#] 1",
+        "sub": {
+          "$intelligence": 2
         },
-      "respond":
-      [
-        {
-          "fr": "Prendre",
-          "en": "[#] 1",
-          "add":{"$money":5}
-        },
-        {
-          "fr": "frappez dedans",
-          "en": "[#] 1",
-          "sub":{"$intelligence":2},
-          "add":{"$luck":2}
-        },
+        "add": {
+          "$luck": 2
+        }
+      },
       {
         "fr": "ignorer",
         "en": "[#] 1"

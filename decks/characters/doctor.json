@@ -38,11 +38,11 @@
         {
           "fr": "Oui",
           "en": "[#] 1",
-          "sub":{"$intelligence":2, "@nbras":1, "health":1, "strenght":1},
+          "sub":{"$intelligence":2, "@nbras":1, "health":1, "strenght":1}
         },
         {
           "fr": "Non",
-          "en": "[#] 1",
+          "en": "[#] 1"
         }
     ]
   }
