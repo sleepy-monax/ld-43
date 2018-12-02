@@ -320,5 +320,26 @@
         "en": "[#] 1"
       }
     ]
+  },
+  {
+    "weight":3 ,
+    "question": {
+      "fr": "Un monstre sur lequel est marqué Uso s'approche de vous",
+      "en": "[#]"
+    },
+    "respond": [
+      {
+        "fr": "Vous l'attaquez",
+        "en": "[#] 1"
+      },
+      {
+        "fr": "Vous fuyez",
+        "en": "[#] 1"
+      },
+      {
+        "fr": "vous touchez un de ces boutons",
+        "en":""
+      }
+    ]
   }
 ]
