@@ -1,6 +1,6 @@
 [
   {
-    "nick": "",
+    "nick": "name",
     "requirement":
     {
       "equal": {},
@@ -18,11 +18,15 @@
     [
       {
         "fr": "[#] 1",
-        "en": "[#] 1"
+        "en": "[#] 1",
+        "lock": "deck",
+        "nextcard": "card"
       },
       {
         "fr": "[#] 2",
-        "en": "[#] 2"
+        "en": "[#] 2",
+        "unlock": "deck",
+        "nextindeck": "deck"
       }
     ]
   }
