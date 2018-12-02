@@ -47,7 +47,6 @@ function deck_unlock(name)
       decks[name] = deck_data
 
       print("Deck unlocked '" .. name .. "' !")
-      print(inspect(deck_data))
     else
       error("No deck named '" .. name .. "' !")
     end
@@ -237,28 +236,28 @@ function card_do_respond(respond)
   else
     current_card = deck_get_nextcard()
   end
-
-  print(inspect(game_states))
 end
 
 function card_draw()
-    animation = animation*0.8
-
-  local offx = ((love.mouse.getX() / 2 - love.graphics.getWidth() / 2) / (love.graphics.getWidth()) + 0.25)
-  local offy = ((love.mouse.getY() / 2 - love.graphics.getHeight() / 2) / (love.graphics.getHeight()) + 0.25)
-
+    animation = animation*0.90
   -- Render the card title
-  love.graphics.setColor(1,1,1)
   local text = love.graphics.newText( assets_font_romulus_big, current_card.question[LANG] )
-  love.graphics.draw(text, love.graphics.getWidth()  / 2 - text:getWidth() / 2 + 16 * offx,
-                           love.graphics.getHeight() / 2 - text:getHeight() / 2 - 76 + 16 * offy)
+  love.graphics.setColor(0,0,0, 0.45)
+  love.graphics.draw(text, love.graphics.getWidth()  / 2 - text:getWidth() / 2 + 4,
+                           love.graphics.getHeight() / 2 - text:getHeight() / 2 - 76 + 4)
+
+  love.graphics.setColor(1,1,1)
+  love.graphics.draw(text, love.graphics.getWidth()  / 2 - text:getWidth() / 2,
+                           love.graphics.getHeight() / 2 - text:getHeight() / 2 - 76)
 
   -- Render card option
+  love.graphics.setColor(1, 1, 1)
+
   for i, respond in ipairs(current_card.respond) do
-    if button(love.graphics.getWidth()  / 2 - (480/2) * (1 - animation) + 32 * offx,
-              love.graphics.getHeight() / 2 + (48 * (i + 1)) * (1 - animation) + 32 * offy,
+    if button(love.graphics.getWidth()  / 2 - (480/2) * (1 - animation),
+              love.graphics.getHeight() / 2 + (48 * (i + 1)) * (1 - animation),
               480 * (1 - animation),
-              32 * (1 - animation), respond[LANG]) then
+              32 * (1 - animation), respond[LANG], (1-animation)) then
       card_do_respond(respond)
 
     end
@@ -268,10 +267,7 @@ end
 -- background ------------------------------------------------------------------
 
 function background_draw()
-  local offx = ((love.mouse.getX() / 2 - love.graphics.getWidth() / 2) / (love.graphics.getWidth()) + 0.25)
-  local offy = ((love.mouse.getY() / 2 - love.graphics.getHeight() / 2) / (love.graphics.getHeight()) + 0.25)
-
-  love.graphics.draw(assets_background, love.graphics.getWidth() / 2 - 32 * offx, love.graphics.getHeight() / 2 - 32 * offy, 0, 2, 2, 400, 300)
+  love.graphics.draw(assets_background, love.graphics.getWidth() / 2, love.graphics.getHeight() / 2, 0, 2, 2, 400, 300)
 end
 
 -- game loop -------------------------------------------------------------------
@@ -311,28 +307,27 @@ end
 
 -- UI --------------------------------------------------------------------------
 
-function button(x, y, w, h, text)
-
+function button(x, y, w, h, text, alpha)
+  alpha = alpha or 1
   -- local dist = distance(x + w / 2, y + h / 2, love.mouse.getX(), love.mouse.getY())
 
   love.graphics.setLineWidth(2)
   if check_collision(x, y, w, h, love.mouse.getX(), love.mouse.getY(), 1, 1) then
-    love.graphics.setColor(0.996, 0.682, 0.012, 0.75)
-    love.graphics.rectangle("fill", x, y, w, h)
-    love.graphics.setColor(0.996, 0.906, 0.38, 0.75)
-    love.graphics.rectangle("line", x, y, w, h)
+    love.graphics.setColor(0.996, 0.682, 0.204, alpha)
+    text = "> " .. text .. " <"
   else
-    love.graphics.setColor(0.227, 0.267, 0.4)
+    --[[love.graphics.setColor(0.227, 0.267, 0.4, alpha)
     love.graphics.rectangle("fill", x, y, w, h)
-    love.graphics.setColor(0.353, 0.412, 0.533)
-    love.graphics.rectangle("line", x, y, w, h)
+    love.graphics.setColor(0.353, 0.412, 0.533, alpha)
+    love.graphics.rectangle("line", x, y, w, h)]]
+    love.graphics.setColor(1, 1, 1, alpha)
   end
 
-  love.graphics.setColor(1, 1, 1)
   local text = love.graphics.newText( assets_font_romulus, text )
   love.graphics.draw(text, x + w / 2 - text:getWidth() / 2,
                            y + h / 2 - text:getHeight() / 2 + 2)
 
+   love.graphics.setColor(1, 1, 1)
    return check_collision(x, y, w, h, love.mouse.getX(), love.mouse.getY(), 1, 1) and mouse_click()
 end
 
