@@ -1,0 +1,43 @@
+[
+  {
+    "weight": 1,
+    "question": {
+      "fr": "Il vous propose de devenir votre médecin",
+      "en": "[#]"
+    },
+    "respond": [
+      {
+        "fr": "Oui",
+        "en": "[#] 1",
+        "sub": {
+          "$intelligence": 2
+        },
+        "unlock":["characters/doctor"]
+      },
+      {
+        "fr": "Non",
+        "en": "[#] 1",
+        "add": {
+          "$intelligence": 2
+        }
+      }
+    ]
+  },
+  {
+    "weight": 0.1,
+    "question":
+    {
+      "fr": "Il a volé vos vêtements",
+      "en": "[#]"
+    },
+    "respond":
+    [
+      {
+        "fr": "Ouais!",
+        "en": "[#] 1",
+
+        "sub":{"$money":4}
+      }
+    ]
+  }
+]

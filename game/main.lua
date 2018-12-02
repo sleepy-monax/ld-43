@@ -8,6 +8,7 @@ LANG = "fr"
 
 function love.load(arg)
   -- Load decks
+  deckmanager_init()
   game_load()
 
   love.graphics.setDefaultFilter("nearest", "nearest", 0)
@@ -38,19 +39,35 @@ end
 
 -- Deck Managments -------------------------------------------------------------
 
-function deck_unlock(name)
-  if decks[name] == nil then
+function deckmanager_init()
+  loaded_deck = {}
+end
+
+function deckmanager_load(name)
+  if loaded_deck[name] == nil then
     if love.filesystem.exists("decks/" .. name .. ".json") then
       local deck_json = love.filesystem.read("decks/" .. name .. ".json")
       local deck_data = json.decode(deck_json)
 
-      decks[name] = deck_data
+      print("Deck loaded '" .. name .. "' !")
 
-      print("Deck unlocked '" .. name .. "' !")
+      loaded_deck[name] = deck_data
+      return deck_data
+
     else
       error("No deck named '" .. name .. "' !")
     end
+  else
+    return loaded_deck[name]
   end
+end
+
+function deck_unlock(name)
+  if decks[name] == nil then
+    decks[name] = deckmanager_load(name)
+  end
+
+  return deck
 end
 
 function deck_lock(name)
@@ -167,8 +184,42 @@ function deck_get_nextcard()
   error("Out of card")
 end
 
+
+function deck_get_nextcard_in_deck(deck)
+  local valid_card = {}
+  local sum_weight = 0
+
+
+  for _, card in ipairs(deck) do
+    if card.weight ~= nil and card.weight > 0 then
+      if card.requirement == nil or
+         card_valid_equal(card) and
+         card_valid_lessthan(card) and
+         card_valid_morethan(card) and
+         card_valid_lessthanorequal(card) and
+         card_valid_morethanorequal(card) then
+
+         table.insert(valid_card, card)
+         sum_weight = sum_weight + card.weight
+      end
+    end
+  end
+
+
+  local rnd_weight = math.random(0, sum_weight * 100) / 100
+
+  for _,card in ipairs(valid_card) do
+    rnd_weight = rnd_weight - card.weight
+    if rnd_weight <= 0 then
+      return card
+    end
+  end
+
+  error("Out of card")
+end
+
 function deck_get_nextcard_by_nick(nick)
-  for _, deck in pairs(decks) do
+  for _, deck in pairs(loaded_deck) do
     for _, card in ipairs(deck) do
       if card.nick == nick then
         return card
@@ -233,6 +284,8 @@ function card_do_respond(respond)
   -- get the next card
   if respond.nextcard ~= nil then
     current_card = deck_get_nextcard_by_nick(respond.nextcard)
+  elseif respond.nextindeck ~= nil then
+    current_card = deck_get_nextcard_in_deck(deckmanager_load(respond.nextindeck))
   else
     current_card = deck_get_nextcard()
   end
@@ -318,6 +371,7 @@ function button(x, y, w, h, text, alpha)
     love.graphics.setColor(0.353, 0.412, 0.533, alpha)
     love.graphics.rectangle("line", x, y, w, h)]]
     love.graphics.setColor(1, 1, 1, alpha)
+
   end
 
   local text = love.graphics.newText( assets_font_romulus, text )

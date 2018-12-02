@@ -1,0 +1,61 @@
+[
+  {
+    "weight":1,
+    "question":
+    {
+      "fr": "Vous êtes a terre",
+      "en": "[#]"
+    },
+    "respond":
+    [
+      {
+        "fr": "Rester a terre",
+        "en": "[#] 1"
+      }
+    ]
+  },
+  {
+    "weight":0.1,
+    "requirement":
+    {
+      "morethanorequal": {
+        "$charisma":15
+      }
+    },
+    "question":
+    {
+      "fr": "Votre ennemie tombe amoureux de vous",
+      "en": "[#]"
+    },
+    "respond":
+    [
+      {
+        "fr": "Épouse moi",
+        "en": "[#] 2"
+      },
+      {
+        "fr": "Non",
+        "en": "[#] 1"
+      }
+    ]
+  },
+  {
+    "weight":1,
+    "question":
+    {
+      "fr": "Vous continuer le combas",
+      "en": "[#]"
+    },
+    "respond":
+    [
+      {
+        "fr": "[#] 1",
+        "en": "[#] 1"
+      },
+      {
+        "fr": "[#] 2",
+        "en": "[#] 2"
+      }
+    ]
+  }
+]

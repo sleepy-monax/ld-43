@@ -44,8 +44,9 @@
         "add":{"$luck":5}
       },
       {
-        "fr": "L'éviter",
-        "en": "[#] 2"
+        "fr": "Lui parler",
+        "en": "[#] 2",
+        "nextindeck":"characters/hobbo"
       },
       {
         "fr": "Donner un coup de pied",
@@ -53,6 +54,10 @@
         "sub": {
           "$strenght": 1
         }
+      },
+      {
+        "fr": "L'éviter",
+        "en": "[#] 2"
       }
     ]
   },
@@ -166,7 +171,8 @@
         "en": "[#] 1",
         "sub": {
           "$intelligence": 2
-        }
+        },
+        "nextindeck": "events/battle"
       },
       {
         "fr": "Vous aboyez",
@@ -217,7 +223,8 @@
     "respond": [
       {
         "fr": "Accepter",
-        "en": "[#] 1"
+        "en": "[#] 1",
+        "nextindeck": "forest"
       },
       {
         "fr": "Refuser",
@@ -246,7 +253,7 @@
           "$charisma": 3
         },
         "sub": {
-          "health": 2
+          "$health": 2
         }
       },
       {
@@ -260,39 +267,9 @@
         "fr": "vous l'attrapez pour le plaquer au sol avec une clée de bras",
         "en": "[#] 1",
         "add": {
-          "$strength": 4
-        }
-      }
-    ]
-  },
-  {
-    "weight": 1,
-    "question": {
-      "fr": "Un clodo vous interpelle, vous proposant de devenir votre médecin",
-      "en": "[#]"
-    },
-    "respond": [
-      {
-        "fr": "Oui",
-        "en": "[#] 1",
-        "sub": {
-          "$intelligence": 2
+          "$strenght": 4
         },
-        "unlock":["characters/doctor"]
-      },
-      {
-        "fr": "Vous l'ignorez",
-        "en": "[#] 1",
-        "add": {
-          "$intelligence": 2
-        }
-      },
-      {
-        "fr": "Vous devenez sa femme",
-        "en": "[#] 1",
-        "set": {
-          "@Hobbo": true
-        }
+        "nextindeck": "events/battle"
       }
     ]
   },

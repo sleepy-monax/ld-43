@@ -38,11 +38,9 @@
         {
           "fr": "lui souhaiter bon appetit",
           "en": "[#] 1",
-          "sub":{"$health":2}
+          "sub":{"$health":2},
+          "add":{"charisma":1}
         },
-        {
-        "add":{"charisma":1}
-      },
         {
           "fr": "lui donner un coup de pieds",
           "en": "[#] 1",
