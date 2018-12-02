@@ -1,1 +1,49 @@
-[]
+[
+  {
+    "weight" : 1,
+    "question": {
+      "fr": "Des champignon: un rouge et un brun",
+      "en": "[#]"
+    },
+    "respond": [
+      {
+        "fr": "Manger le rouge",
+        "en": "[#] 1"
+      },
+      {
+        "fr": "Manger le brun",
+        "en": "[#] 2"
+      },
+      {
+        "fr": "Donné un coup de pied",
+        "en": "[#] 4"
+      },
+      {
+        "fr": "Continuer la route",
+        "en": "[#] 3"
+      }
+    ]
+  },
+  {
+    "nick": "red_mushroom",
+    "question": {
+      "fr": "Vous avez mal au ventre",
+      "en": "[#]"
+    },
+    "respond": {
+      "fr": "Ah!",
+      "en": "[#]"
+    }
+  },
+  {
+    "nick": "blue_mushroom",
+    "question": {
+      "fr": "Vous avez mal au ventre",
+      "en": "[#]"
+    },
+    "respond": {
+      "fr": "Ah!",
+      "en": "[#]"
+    }
+  }
+]

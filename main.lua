@@ -153,7 +153,7 @@ function deck_get_nextcard()
     end
   end
 
-  local rnd_weight = math.random(0, sum_weight)
+  local rnd_weight = math.random(0, sum_weight * 100) / 100
 
   for _,card in ipairs(valid_card) do
     rnd_weight = rnd_weight - card.weight
@@ -181,6 +181,7 @@ end
 
 function game_load()
   decks = {}
+  animation = 1
 
   local game_states_json = love.filesystem.read("game_states.json")
   game_states = json.decode(game_states_json)
@@ -197,7 +198,7 @@ end
 
 function game_draw()
   love.graphics.clear(0.094, 0.078, 0.145)
-
+  animation = animation*0.8
 
   if DEBUG then
     local i = 0
@@ -213,8 +214,9 @@ function game_draw()
                            love.graphics.getHeight() / 2 - text:getHeight() / 2 - 76)
 
   for i, respond in ipairs(current_card.respond) do
-    if button(love.graphics.getWidth() / 2 - 480/2, love.graphics.getHeight() / 2 + 48 * (i + 1), 480, 32, respond[LANG]) then
+    if button(love.graphics.getWidth() / 2 - (480/2) * (1 - animation), love.graphics.getHeight() / 2 + (48 * (i + 1)) * (1 - animation), 480 * (1 - animation), 32 * (1 - animation), respond[LANG]) then
       print(inspect(respond))
+      animation = 1
 
       -- Set game states
       if respond.set ~= nil then
