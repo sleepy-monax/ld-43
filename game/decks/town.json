@@ -224,7 +224,8 @@
       {
         "fr": "Accepter",
         "en": "[#] 1",
-        "nextindeck": "forest"
+        "lock": "town",
+        "unlock": "forest"
       },
       {
         "fr": "Refuser",
