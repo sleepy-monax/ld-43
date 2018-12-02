@@ -153,7 +153,7 @@ function deck_get_nextcard()
     end
   end
 
-  local rnd_weight = math.random(0, sum_weight)
+  local rnd_weight = math.random(0, sum_weight * 100) / 100
 
   for _,card in ipairs(valid_card) do
     rnd_weight = rnd_weight - card.weight

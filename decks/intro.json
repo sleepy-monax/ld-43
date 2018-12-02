@@ -48,6 +48,12 @@
         "nextcard":"town_entry"
       },
       {
+        "fr": "Marcher vers le château",
+        "en": "[#]",
+        "unlock": ["castle"],
+        "nextcard":"castle_entry"
+      },
+      {
         "fr": "Rester dans la forêt",
         "en": "[#]",
         "unlock": ["forest"]

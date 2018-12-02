@@ -17,8 +17,8 @@ choix:- Guerrier
 		Sataniste
 		Amoureux de la nature
 		Maitre du donjon
-		
-		
+
+
 Vous êtes une personne pauvres, très pauvres, vous ne possédez rien, vous êtes dans la forêt, proche d'une ville, que faites vous?
 
 -Ville: -Attaque de dragon
@@ -31,7 +31,7 @@ Vous êtes une personne pauvres, très pauvres, vous ne possédez rien, vous êt
 		-La ville subit une attaque de gobelins
 		-Vous tombez dans les égouts
 		-un homme riche vous propose de l'argent contre votre esclavagisme
-		-vous vous baladez dans la ville 
+		-vous vous baladez dans la ville
 		-Face à un stand, vous hesitez
 		-Votre malchance vous conduit dans la chambre d'une femme seule
 		-un chat se frotte a votre cuisse
@@ -51,9 +51,9 @@ Vous êtes une personne pauvres, très pauvres, vous ne possédez rien, vous êt
 		-On vous vole votre argent
 		-On vous vole un objet
 		-On vous vole vos vêtements
-		
-		
--Chateau: =>militaire: -On vous mets à l'entrainement 
+
+
+-Chateau: =>militaire: -On vous mets à l'entrainement
 						-On vous propose une arme
 						-Un soldat vous frappe, vous menaçant par la suite
 						-Vous devez éplucher les patates pour la cantines
@@ -62,7 +62,7 @@ Vous êtes une personne pauvres, très pauvres, vous ne possédez rien, vous êt
 						-Un cheval rue et vous frappe au bassin
 						-Votre chef militaire vous caresse la joue
 						-Vous vous réveillez, un cheval au dessus de vous
-						-Vous vous réveillez, un orc au dessus de vous 
+						-Vous vous réveillez, un orc au dessus de vous
 						-Votre entrainement porte ces fruits
 						-Votre chef vous aiment bien
 						-Le roi vous appelle
@@ -87,16 +87,16 @@ Vous êtes une personne pauvres, très pauvres, vous ne possédez rien, vous êt
 					-Le roi vous trouve affreux et vous fait partir
 					-Votre pantalon tombe, vous vous écrasez le visage au soldat
 					-Face a votre charisme et votre intelligence, le roi se sent idiot, et vous cède le trône
-		
+
 		=>Riche :-Face a votre charisme et votre intelligence, le roi se sent idiot, et vous cède le trône
 				-La haute bourgeoisie vous invite à vous joindre a eux
 				-Vous voulez acheter quelque chose au roi
 				-
-		
+
 		=>Roi:-un de vos citoyens vient vous voir afin que vous accediez a sa requêtes
 				-Votre armée se ramollit
 				-
 
 -Forêt:
-
+	ceuilir des champignon
 -Donjon:

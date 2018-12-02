@@ -79,13 +79,6 @@
     },
     "respond": [
       {
-        "fr": "Non",
-        "en": "[#] 1",
-        "add": {
-          "$intelligence": 2
-        }
-      },
-      {
         "fr": "Ouais",
         "en": "[#] 1",
         "add": {
@@ -94,6 +87,13 @@
         "unlock": [
           "slave"
         ]
+      },
+      {
+        "fr": "Non",
+        "en": "[#] 1",
+        "add": {
+          "$intelligence": 2
+        }
       }
     ]
   },
@@ -197,10 +197,6 @@
     },
     "respond": [
       {
-        "fr": "Vous fuyez",
-        "en": "[#] 1"
-      },
-      {
         "fr": "Vous vous positionnez, prêts à tout encaisser",
         "en": "[#] 1",
         "sub": {
@@ -213,6 +209,37 @@
         "sub": {
           "$intelligence": 4
         }
+      },
+      {
+        "fr": "Vous fuyez",
+        "en": "[#] 1"
+      }
+    ]
+  },
+  {
+    "weight": 1,
+    "question": {
+      "fr": "Votre malchance vous conduit dans la chambre d'une femme seule qui hurle",
+      "en": "[#]"
+    },
+    "respond": [
+      {
+        "fr": "Vous criez aussi",
+        "en": "[#] 1",
+        "sub": {
+          "$intelligence": 2
+        }
+      },
+      {
+        "fr": "vous vous cachez sous le lit, au cas où",
+        "en": "[#] 1",
+        "add": {
+          "$intelligence": 4
+        }
+      },
+      {
+        "fr": "Vous fuyez",
+        "en": "[#] 1"
       }
     ]
   },
@@ -240,32 +267,6 @@
         "add": {
           "$intelligence": 4
         }
-      }
-
-    ]
-  },
-    {
-        "weight":1,
-        "question":
-        {
-          "fr": "Votre malchance vous conduit dans la chambre d'une femme seule qui hurle",
-          "en": "[#]"
-        },
-      "respond":
-      [
-        {
-          "fr": "Vous fuyez",
-          "en": "[#] 1"
-        },
-        {
-          "fr": "Vous criez aussi",
-          "en": "[#] 1",
-          "sub":{"$intelligence":2}
-        },
-      {
-        "fr": "vous vous cachez sous le lit, au cas où",
-        "en": "[#] 1",
-        "add":{"$intelligence":4}
       }
     ]
   }
