@@ -1,25 +1,27 @@
 [
   {
-    "weight" : 1,
+    "weight": 1,
     "question": {
-      "fr": "Des champignon: un rouge et un brun",
+      "fr": "Des champignon: un rouge et un bleu",
       "en": "[#]"
     },
     "respond": [
       {
         "fr": "Manger le rouge",
-        "en": "[#] 1"
+        "en": "[#] 1",
+        "nextcard": "red_mushroom"
       },
       {
-        "fr": "Manger le brun",
-        "en": "[#] 2"
+        "fr": "Manger le bleu",
+        "en": "[#] 2",
+        "nextcard": "blue_mushroom"
       },
       {
-        "fr": "Donné un coup de pied",
+        "fr": "Donner un coup de pied",
         "en": "[#] 4"
       },
       {
-        "fr": "Continuer la route",
+        "fr": "Fuir pour votre vie",
         "en": "[#] 3"
       }
     ]
@@ -27,23 +29,71 @@
   {
     "nick": "red_mushroom",
     "question": {
-      "fr": "Vous avez mal au ventre",
+      "fr": "Vous vous sentez très léger",
       "en": "[#]"
     },
-    "respond": {
-      "fr": "Ah!",
-      "en": "[#]"
-    }
+    "respond": [
+      {
+        "fr": "Ah!",
+        "en": "[#]"
+      }
+    ]
   },
   {
     "nick": "blue_mushroom",
     "question": {
-      "fr": "Vous avez mal au ventre",
+      "fr": "Votre nez grandis, mais vos muscles aussi",
       "en": "[#]"
     },
-    "respond": {
-      "fr": "Ah!",
+    "respond": [
+      {
+        "fr": "Ah!",
+        "en": "[#]",
+        "add": {
+          "strenght": 5
+        },
+        "sub": {
+          "charisma": 3
+        }
+      }
+    ]
+  },
+  {
+    "weight": 3,
+    "question": {
+      "fr": "Vous gambadez dans la forêt tel un cabri",
       "en": "[#]"
-    }
+    },
+    "respond": [
+      {
+        "fr": "Ouiiiiii",
+        "en": "[#] 1"
+      }
+    ]
+  },
+  {
+    "weight": 1,
+    "question": {
+      "fr": "Un groupe de gobelin essaye de capturer une fée",
+      "en": "[#]"
+    },
+    "respond": [
+      {
+        "fr": "Vous hurlez en bombant le torse afin d'attirer l'attention",
+        "en": "[#] 1"
+      },
+      {
+        "fr": "Vous vous apprétez à attaquer les gobelins avec votre force",
+        "en": "[#] 2"
+      },
+      {
+        "fr": "Se glisser entre la fée et les gobelins pour qu'ils vous prennent à sa place",
+        "en": "[#] 2"
+      },
+      {
+        "fr": "Vous mangez une pomme d'un arbre en continuant votre chemin",
+        "en": "[#] 2"
+      }
+    ]
   }
 ]
