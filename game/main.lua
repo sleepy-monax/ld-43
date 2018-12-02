@@ -2,7 +2,7 @@ json = require('libs.json')
 inspect = require('libs.inspect')
 
 DEBUG = true
-LANG = "fr"
+LANG = "en"
 
 -- Love2d callbacks ------------------------------------------------------------
 
@@ -330,6 +330,9 @@ function game_load()
   local game_states_json = love.filesystem.read("game_states.json")
   game_states = json.decode(game_states_json)
 
+  local game_states_names_json = love.filesystem.read("attribute.json")
+  game_states_names = json.decode(game_states_names_json)
+
   deck_unlock("intro")
   deck_unlock("endings/money")
   deck_unlock("endings/health")
@@ -346,13 +349,15 @@ function game_draw()
 
   card_draw()
 
-  if DEBUG then
-    local i = 0
-    for k,v in pairs(game_states) do
-      love.graphics.print(k .. " : " .. tostring(v), 16, 16 + 16 * i)
+
+  local i = 0
+  for k,v in pairs(game_states) do
+    if game_states_names[k] ~= nil then
+      love.graphics.print(game_states_names[k][LANG] .. " : " .. tostring(v), 16, 16 + 16 * i)
       i = i + 1
     end
   end
+
 end
 
 -- UI --------------------------------------------------------------------------
