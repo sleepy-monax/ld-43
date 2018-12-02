@@ -4,6 +4,8 @@ inspect = require('libs.inspect')
 DEBUG = true
 LANG = "fr"
 
+-- Love2d callbacks ------------------------------------------------------------
+
 function love.load(arg)
   -- Load decks
   game_load()
@@ -50,13 +52,14 @@ function deck_unlock(name)
       error("No deck named '" .. name .. "' !")
     end
   end
-
 end
 
 function deck_lock(name)
   print("Deck locked '" .. name .. "' !")
   decks[name] = nil
 end
+
+-- Deck managment --------------------------------------------------------------
 
 function card_valid_equal(card)
   local requirements = card.requirement.equal
@@ -177,7 +180,101 @@ function deck_get_nextcard_by_nick(nick)
   error("No card named " .. nick .. "!")
 end
 
--- GAME ------------------------------------------------------------------------
+-- card ------------------------------------------------------------------------
+
+function card_do_respond(respond)
+  animation = 1
+
+  -- Set game states
+  if respond.set ~= nil then
+    for k,v in pairs(respond.set) do
+      print("set ".. k .. ":" .. tostring(v))
+      game_states[k] = v
+    end
+  end
+
+  -- Add game states
+  if respond.add ~= nil then
+    for k,v in pairs(respond.add) do
+      print("add ".. k .. ":" .. tostring(v))
+      if game_states[k] == nil then
+        game_states[k] = v
+      else
+        game_states[k] = game_states[k] + v
+      end
+    end
+  end
+
+  -- Substract game states
+  if respond.sub ~= nil then
+    for k,v in pairs(respond.sub) do
+      print("sub ".. k .. ":" .. tostring(v))
+      if game_states[k] == nil then
+        game_states[k] = -v
+      else
+        game_states[k] = game_states[k] - v
+      end
+    end
+  end
+
+  -- Unlock decks
+  if respond.unlock ~= nil then
+    for i,v in ipairs(respond.unlock) do
+      deck_unlock(v)
+    end
+  end
+
+  -- lock decks
+  if respond.lock ~= nil then
+    for i,v in ipairs(respond.lock) do
+      deck_lock(v)
+    end
+  end
+
+  -- get the next card
+  if respond.nextcard ~= nil then
+    current_card = deck_get_nextcard_by_nick(respond.nextcard)
+  else
+    current_card = deck_get_nextcard()
+  end
+
+  print(inspect(game_states))
+end
+
+function card_draw()
+    animation = animation*0.8
+
+  local offx = ((love.mouse.getX() / 2 - love.graphics.getWidth() / 2) / (love.graphics.getWidth()) + 0.25)
+  local offy = ((love.mouse.getY() / 2 - love.graphics.getHeight() / 2) / (love.graphics.getHeight()) + 0.25)
+
+  -- Render the card title
+  love.graphics.setColor(1,1,1)
+  local text = love.graphics.newText( assets_font_romulus_big, current_card.question[LANG] )
+  love.graphics.draw(text, love.graphics.getWidth()  / 2 - text:getWidth() / 2 + 16 * offx,
+                           love.graphics.getHeight() / 2 - text:getHeight() / 2 - 76 + 16 * offy)
+
+  -- Render card option
+  for i, respond in ipairs(current_card.respond) do
+    if button(love.graphics.getWidth()  / 2 - (480/2) * (1 - animation) + 32 * offx,
+              love.graphics.getHeight() / 2 + (48 * (i + 1)) * (1 - animation) + 32 * offy,
+              480 * (1 - animation),
+              32 * (1 - animation), respond[LANG]) then
+      card_do_respond(respond)
+
+    end
+  end
+end
+
+-- background ------------------------------------------------------------------
+
+function background_draw()
+  local offx = ((love.mouse.getX() / 2 - love.graphics.getWidth() / 2) / (love.graphics.getWidth()) + 0.25)
+  local offy = ((love.mouse.getY() / 2 - love.graphics.getHeight() / 2) / (love.graphics.getHeight()) + 0.25)
+
+  love.graphics.draw(assets_background, love.graphics.getWidth() / 2 - 32 * offx, love.graphics.getHeight() / 2 - 32 * offy, 0, 2, 2, 400, 300)
+end
+
+-- game loop -------------------------------------------------------------------
 
 function game_load()
   decks = {}
@@ -189,7 +286,23 @@ function game_load()
   deck_unlock("intro")
   deck_unlock("endings/money")
   deck_unlock("endings/health")
+  deck_unlock("town")
   current_card = deck_get_nextcard_by_nick("game_start")
+
+  vvv = {}
+
+  for i=1,100000 do
+    local d = deck_get_nextcard()
+    if vvv[d] == nil then
+      vvv[d] = 1
+    else
+      vvv[d] = vvv[d] + 1
+    end
+  end
+
+  for k,v in pairs(vvv) do
+    print(v .. " "..tostring(k.question.fr))
+  end
 end
 
 function game_update(dt)
@@ -199,91 +312,14 @@ end
 function game_draw()
   love.graphics.clear(0.094, 0.078, 0.145)
 
-
-  -- Render the background
-
-  offx = ((love.mouse.getX() / 2 - love.graphics.getWidth() / 2) / (love.graphics.getWidth()) + 0.25)
-  offy = ((love.mouse.getY() / 2 - love.graphics.getHeight() / 2) / (love.graphics.getHeight()) + 0.25)
-
-  love.graphics.draw(assets_background, love.graphics.getWidth() / 2 - 32 * offx, love.graphics.getHeight() / 2 - 32 * offy, 0, 2, 2, 400, 300)
-
-  animation = animation*0.8
+  background_draw()
+  card_draw()
 
   if DEBUG then
     local i = 0
     for k,v in pairs(game_states) do
       love.graphics.print(k .. " : " .. tostring(v), 16, 16 + 16 * i)
       i = i + 1
-    end
-  end
-
-  love.graphics.setColor(1,1,1)
-  local text = love.graphics.newText( assets_font_romulus_big, current_card.question[LANG] )
-  love.graphics.draw(text, love.graphics.getWidth()  / 2 - text:getWidth() / 2 + 16 * offx,
-                           love.graphics.getHeight() / 2 - text:getHeight() / 2 - 76 + 16 * offy)
-
-  for i, respond in ipairs(current_card.respond) do
-    if button(love.graphics.getWidth()  / 2 - (480/2) * (1 - animation) + 32 * offx,
-              love.graphics.getHeight() / 2 + (48 * (i + 1)) * (1 - animation) + 32 * offy,
-              480 * (1 - animation),
-              32 * (1 - animation), respond[LANG]) then
-      print(inspect(respond))
-      animation = 1
-
-      -- Set game states
-      if respond.set ~= nil then
-        for k,v in pairs(respond.set) do
-          print("set ".. k .. ":" .. tostring(v))
-          game_states[k] = v
-        end
-      end
-
-      -- Add game states
-      if respond.add ~= nil then
-        for k,v in pairs(respond.add) do
-          print("add ".. k .. ":" .. tostring(v))
-          if game_states[k] == nil then
-            game_states[k] = v
-          else
-            game_states[k] = game_states[k] + v
-          end
-        end
-      end
-
-      -- Substract game states
-      if respond.sub ~= nil then
-        for k,v in pairs(respond.sub) do
-          print("sub ".. k .. ":" .. tostring(v))
-          if game_states[k] == nil then
-            game_states[k] = -v
-          else
-            game_states[k] = game_states[k] - v
-          end
-        end
-      end
-
-      -- Unlock decks
-      if respond.unlock ~= nil then
-        for i,v in ipairs(respond.unlock) do
-          deck_unlock(v)
-        end
-      end
-
-      -- lock decks
-      if respond.lock ~= nil then
-        for i,v in ipairs(respond.lock) do
-          deck_lock(v)
-        end
-      end
-
-      -- get the next card
-      if respond.nextcard ~= nil then
-        current_card = deck_get_nextcard_by_nick(respond.nextcard)
-      else
-        current_card = deck_get_nextcard()
-      end
-
-      print(inspect(game_states))
     end
   end
 end
