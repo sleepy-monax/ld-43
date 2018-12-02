@@ -364,7 +364,7 @@
         {
           "fr": "Prendre",
           "en": "[#] 1",
-          "add":{"$moeny":5}
+          "add":{"$money":5}
         },
         {
           "fr": "frappez dedans",
