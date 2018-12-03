@@ -47,5 +47,20 @@
         "en": "[#] 2"
       }
     ]
+  },
+  {
+    "weight": 1,
+    "question":
+    {
+      "fr": "On dirais qu'il vous suit",
+      "en": "[#]"
+    },
+    "respond":
+    [
+      {
+        "fr": "Ah!",
+        "en": "[#] 2"
+      }
+    ]
   }
 ]
