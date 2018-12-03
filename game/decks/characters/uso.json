@@ -1,0 +1,28 @@
+[
+  {
+    "weight": 1,
+    "question": {
+      "fr": "Click click click click",
+      "en": "[#]"
+    },
+    "respond": [
+      {
+        "fr": "Quelle étrange creature",
+        "en": "[#]"
+      }
+    ]
+  },
+  {
+    "weight": 1,
+    "question": {
+      "fr": "Une musique ce mets a jouer, ces boutons s'allumer en rythme",
+      "en": "[#]"
+    },
+    "respond": [
+      {
+        "fr": "Quelle étrange creature",
+        "en": "[#]"
+      }
+    ]
+  }
+]

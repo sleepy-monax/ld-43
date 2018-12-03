@@ -1,0 +1,28 @@
+[
+  {
+    "weight": 1,
+    "question": {
+      "fr": "Elles ont disparus",
+      "en": "[#]"
+    },
+    "respond": [
+      {
+        "fr": "Ah!",
+        "en": "[#]"
+      }
+    ]
+  },
+  {
+    "weight": 1,
+    "question": {
+      "fr": "Elles vous jetes un malediction",
+      "en": "You wander through the forest like a happy little goat"
+    },
+    "respond": [
+      {
+        "fr": "Ah!",
+        "en": "[#]"
+      }
+    ]
+  }
+]
