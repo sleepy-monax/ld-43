@@ -35,37 +35,5 @@
         ]
       }
     ]
-  },
-  {
-    "weight": 1,
-    "question": {
-      "fr": "Une femme, habillée de cuir, le fouet à la main se rapproche de vous",
-      "en": "[#]"
-    },
-    "respond": [
-      {
-        "fr": "Vous fuyez",
-        "en": "[#] 1"
-      },
-      {
-        "fr": "Vous êtes prêts à lui resister",
-        "en": "[#] 2",
-        "unlock": [
-          "slave"
-        ]
-      },
-      {
-        "fr": "Vous vous laissez faire",
-        "en": "[#] 2",
-        "unlock": [
-          "slave"
-        ]
-      },
-      {
-        "fr": "Vous êtes prêts à vous battre",
-        "en": "[#] 2",
-        "nextindeck": "events/battle"
-      }
-    ]
   }
 ]
