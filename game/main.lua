@@ -1,5 +1,6 @@
 json = require('libs.json')
 inspect = require('libs.inspect')
+suit = require('libs.suit')
 
 DEBUG = true
 LANG = "fr"
@@ -19,7 +20,6 @@ function love.load(arg)
 
   assets_font_romulus_big = love.graphics.newFont("assets/romulus.ttf", 32)
   assets_font_romulus = love.graphics.newFont("assets/romulus.ttf", 26)
-  assets_background = love.graphics.newImage("assets/background/background.png")
 
   print("Loading images...")
   icons = {}
