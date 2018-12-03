@@ -1,0 +1,265 @@
+[
+  {
+    "weight": 2,
+    "question": {
+      "fr": "Un mendiant vous accoste",
+      "en": "A homeless personne come to talk with you"
+    },
+    "respond": [
+      {
+        "fr": "Donner une pièce",
+        "en": "give one gold",
+        "sub": {
+          "$money": 1
+        },
+        "add":{"$luck":5}
+      },
+      {
+        "fr": "Lui parler",
+        "en": "talk with him",
+        "nextindeck":"characters/hobbo"
+      },
+      {
+        "fr": "Donner un coup de pied",
+        "en": "hit them",
+        "sub": {
+          "$strenght": 1
+        }
+      },
+      {
+        "fr": "L'éviter",
+        "en": "escape them"
+      }
+    ]
+  },
+  {
+    "weight": 1,
+    "question": {
+      "fr": "Un homme vous propose de l'argent contre votre libertée",
+      "en": "A men porpose trading your liberty with gold"
+    },
+    "respond": [
+      {
+        "fr": "Ouais",
+        "en": "Yes!",
+        "add": {
+          "$money": 10
+        },
+        "unlock": [
+          "slave"
+        ]
+      },
+      {
+        "fr": "Non",
+        "en": "No",
+        "add": {
+          "$intelligence": 2
+        }
+      }
+    ]
+  },
+  {
+    "weight": 0.5,
+    "question": {
+      "fr": "Une femme vous accoste avec un bébé, disant qu'il s'agit du vôtre",
+      "en": "A woman come near you with a baby, she say: it's your baby! "
+    },
+    "respond": [
+      {
+        "fr": "Oui",
+        "en": "Yes",
+        "sub": {
+          "$intelligence": 2
+        },
+        "add": {
+          "baby": 1
+        }
+      },
+      {
+        "fr": "On se connait?",
+        "en": "Who are you?",
+        "sub": {
+          "$health": 2
+        }
+      },
+      {
+        "fr": "Non",
+        "en": "No",
+        "add": {
+          "$intelligence": 2
+        }
+      },
+      {
+        "fr": "Je suis stérile",
+        "en": "I'm sterile",
+        "add": {
+          "$intelligence": 4
+        },
+        "set": {
+          "@sterile": true
+        }
+      }
+    ]
+  },
+  {
+    "weight": 2,
+    "question": {
+      "fr": "une série de chats vous regardent, l'air affamé",
+      "en": "[#]"
+    },
+    "respond": [
+      {
+        "fr": "Vous vous positionnez, prêts à tout encaisser",
+        "en": "[#] 1",
+        "sub": {
+          "$intelligence": 2
+        },
+        "nextindeck": "events/battle"
+      },
+      {
+        "fr": "Vous aboyez",
+        "en": "You bark",
+        "sub": {
+          "$intelligence": 4
+        }
+      },
+      {
+        "fr": "Vous fuyez",
+        "en": "You run"
+      }
+    ]
+  },
+  {
+    "weight": 0.2,
+    "question": {
+      "fr": "Votre malchance vous conduit dans la chambre d'une femme seule qui hurle",
+      "en": "[#]"
+    },
+    "respond": [
+      {
+        "fr": "Vous criez aussi",
+        "en": "[#] 1",
+        "sub": {
+          "$intelligence": 2
+        }
+      },
+      {
+        "fr": "vous vous cachez sous le lit, au cas où",
+        "en": "[#] 1",
+        "add": {
+          "$intelligence": 4
+        }
+      },
+      {
+        "fr": "Vous fuyez",
+        "en": "[#] 1"
+      }
+    ]
+  },
+  {
+    "weight": 1,
+    "question": {
+      "fr": "Un homme mystérieux se rapproche de vous, vous proposant d'allez en forêt avec lui",
+      "en": "[#]"
+    },
+    "respond": [
+      {
+        "fr": "Accepter",
+        "en": "[#] 1",
+        "lock": ["town"],
+        "unlock": ["forest"]
+      },
+      {
+        "fr": "Refuser",
+        "en": "[#] 1"
+      },
+      {
+        "fr": "Vous vous laissez tomber, faisant le mort",
+        "en": "[#] 1",
+        "sub": {
+          "$health": 4
+        }
+      }
+    ]
+  },
+  {
+    "weight": 3,
+    "question": {
+      "fr": "Un homme vous fonce dessus, vous faisant tomber",
+      "en": "[#]"
+    },
+    "respond": [
+      {
+        "fr": "Se laissez tomber et hurler à l'aggression",
+        "en": "[#] 1",
+        "add": {
+          "$charisma": 3
+        },
+        "sub": {
+          "$health": 2
+        }
+      },
+      {
+        "fr": "Vous vous relever sans soucis",
+        "en": "[#] 1",
+        "sub": {
+          "$health": 2
+        }
+      },
+      {
+        "fr": "vous l'attrapez pour le plaquer au sol avec une clée de bras",
+        "en": "[#] 1",
+        "add": {
+          "$strenght": 4
+        },
+        "nextindeck": "events/battle"
+      }
+    ]
+  },
+  {
+    "weight": 0.5,
+    "question": {
+      "fr": "Vous trouvez 5 pièces sur le sol",
+      "en": "you find 5 gold op the ground"
+    },
+    "respond": [
+      {
+        "fr": "Prendre",
+        "en": "take them",
+        "add": {
+          "$money": 5
+        }
+      },
+      {
+        "fr": "frappez dedans",
+        "en": "Hit them",
+        "sub": {
+          "$intelligence": 2
+        },
+        "add": {
+          "$luck": 2
+        }
+      },
+      {
+        "fr": "ignorer",
+        "en": "Ignore"
+      }
+    ]
+  },
+  {
+    "weight": 1,
+    "question": {
+      "fr": "vous tombez dans les égouts",
+      "en": "you fall in the sewer"
+    },
+    "respond": [
+      {
+        "fr": "Aïe",
+        "en": "Aouch",
+        "sub": {
+          "$health": 1
+        }
+      }
+    ]
+  }
+]
