@@ -64,12 +64,12 @@
     "weight": 10,
     "question": {
       "fr": "Vous gambadez dans la forêt tel un cabri",
-      "en": "[#]"
+      "en": "You wander through the forest like a happy little goat"
     },
     "respond": [
       {
         "fr": "Ouiiiiii",
-        "en": "[#] 1"
+        "en": "Yeaaaaaah"
       }
     ]
   },
@@ -77,16 +77,17 @@
     "weight": 1,
     "question": {
       "fr": "Un groupe de gobelin essaye de capturer une fée",
-      "en": "[#]"
+      "en": "A group of goblins are trying to capture a fairy"
     },
     "respond": [
       {
-        "fr": "Vous hurlez en bombant le torse afin d'attirer l'attention",
-        "en": "[#] 1"
+        "fr": "Vous hurlez afin d'attirer l'attention",
+        "en": "You scream to get attention"
       },
       {
-        "fr": "Vous vous apprétez à attaquer les gobelins avec votre force",
-        "en": "[#] 2"
+        "fr": "Vous attaquez les gobelins",
+        "en": "You attack",
+        "nextindeck": "events/battle"
       },
       {
         "fr": "Se glisser entre la fée et les gobelins pour qu'ils vous prennent à sa place",
@@ -94,7 +95,7 @@
       },
       {
         "fr": "Vous mangez une pomme d'un arbre en continuant votre chemin",
-        "en": "[#] 2",
+        "en": "You eat an apple from a tree as you continue on your way",
         "nextindeck": "events/eat"
       }
     ]
@@ -107,15 +108,11 @@
     },
     "respond": [
       {
-        "fr": "Vous tentez de l'écraser avec votre main",
+        "fr": "Vous l'écrasez avec votre main",
         "en": "[#] 1"
       },
       {
         "fr": "Vous lui soufflez dessus",
-        "en": "[#] 2"
-      },
-      {
-        "fr": "En la regardant, vous vous prenez un arbre",
         "en": "[#] 2"
       },
       {

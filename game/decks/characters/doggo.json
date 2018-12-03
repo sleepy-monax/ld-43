@@ -32,5 +32,20 @@
         "en": "[#] 2"
       }
     ]
+  },
+  {
+    "weight": 1,
+    "question":
+    {
+      "fr": "Il vous donne la pate",
+      "en": "[#]"
+    },
+    "respond":
+    [
+      {
+        "fr": "Brave bête",
+        "en": "[#] 2"
+      }
+    ]
   }
 ]

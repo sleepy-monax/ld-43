@@ -147,7 +147,7 @@
     ]
   },
   {
-    "weight": 10,
+    "weight": 5,
     "question": {
       "fr": "Vous vous promenez en ville",
       "en": "[#]"
@@ -305,7 +305,7 @@
     ]
   },
   {
-    "weight":3 ,
+    "weight":1 ,
     "question": {
       "fr": "Vous êtes proche du château",
       "en": "[#]"
