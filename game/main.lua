@@ -2,7 +2,7 @@ json = require('libs.json')
 inspect = require('libs.inspect')
 
 DEBUG = true
-LANG = "fr"
+LANG = "en"
 
 -- Love2d callbacks ------------------------------------------------------------
 
