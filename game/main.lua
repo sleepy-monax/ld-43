@@ -1,6 +1,5 @@
 json = require('libs.json')
 inspect = require('libs.inspect')
-suit = require('libs.suit')
 
 DEBUG = true
 LANG = "fr"
@@ -38,6 +37,7 @@ end
 function love.draw()
   game_draw()
 end
+
 
 -- Deck Managments -------------------------------------------------------------
 
@@ -320,7 +320,6 @@ function card_draw()
               480 * (1 - animation),
               64 * (1 - animation), respond[LANG], (1-animation)) then
       card_do_respond(respond)
-
     end
   end
 end
