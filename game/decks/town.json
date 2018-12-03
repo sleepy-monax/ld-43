@@ -155,7 +155,7 @@
     "respond": [
       {
         "fr": "Pumpulu",
-        "en": "[#] 1"
+        "en": "Pumpulu"
       }
     ]
   },
@@ -176,14 +176,14 @@
       },
       {
         "fr": "Vous aboyez",
-        "en": "[#] 1",
+        "en": "You bark",
         "sub": {
           "$intelligence": 4
         }
       },
       {
         "fr": "Vous fuyez",
-        "en": "[#] 1"
+        "en": "You run"
       }
     ]
   },
