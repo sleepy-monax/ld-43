@@ -57,7 +57,7 @@
       },
       {
         "fr": "L'éviter",
-        "en": ""
+        "en": "escape them"
       }
     ]
   },
@@ -65,12 +65,12 @@
     "weight": 0.1,
     "question": {
       "fr": "vous tombez dans les égouts",
-      "en": "[#]"
+      "en": "you fall in the sewer"
     },
     "respond": [
       {
         "fr": "Aïe",
-        "en": "[#] 1",
+        "en": "Aouch",
         "sub": {
           "$health": 1
         }
@@ -81,12 +81,12 @@
     "weight": 1,
     "question": {
       "fr": "Un homme vous propose de l'argent contre votre libertée",
-      "en": "[#]"
+      "en": "A men porpose trading your liberty with gold"
     },
     "respond": [
       {
         "fr": "Ouais",
-        "en": "[#] 1",
+        "en": "Yes!",
         "add": {
           "$money": 10
         },
@@ -96,7 +96,7 @@
       },
       {
         "fr": "Non",
-        "en": "[#] 1",
+        "en": "No",
         "add": {
           "$intelligence": 2
         }
@@ -107,12 +107,12 @@
     "weight": 0.5,
     "question": {
       "fr": "Une femme vous accoste avec un bébé, disant qu'il s'agit du vôtre",
-      "en": "[#]"
+      "en": "A woman come near you with a baby, she say: it's your baby! "
     },
     "respond": [
       {
         "fr": "Oui",
-        "en": "[#] 1",
+        "en": "Yes",
         "sub": {
           "$intelligence": 2
         },
@@ -122,21 +122,21 @@
       },
       {
         "fr": "On se connait?",
-        "en": "[#] 1",
+        "en": "Who are you?",
         "sub": {
           "$health": 2
         }
       },
       {
         "fr": "Non",
-        "en": "[#] 1",
+        "en": "No",
         "add": {
           "$intelligence": 2
         }
       },
       {
         "fr": "Je suis stérile",
-        "en": "[#] 1",
+        "en": "I'm sterile",
         "add": {
           "$intelligence": 4
         },
