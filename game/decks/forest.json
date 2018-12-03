@@ -40,13 +40,11 @@
         "nextindeck": "events/forest"
       }
     ]
-<<<<<<< HEAD
-=======
   },
   {
     "weight": 2,
     "question": {
-      "fr": "Vous voyer une écureil",
+      "fr": "Vous voyez un écureil",
       "en": "[#]"
     },
     "respond": [
@@ -65,11 +63,11 @@
     },
     "respond": [
       {
-        "fr": "Continuer dans le foret",
+        "fr": "Continuer dans la forêt",
         "en": "[#] 2"
       },
       {
-        "fr": "Continuer vers ville",
+        "fr": "Continuer vers la ville",
         "en": "[#] 1",
         "unlock": [
           "town"
@@ -79,6 +77,5 @@
         ]
       }
     ]
->>>>>>> 196575ab37ddb80b450265854dcb28f26aca50a3
   }
 ]

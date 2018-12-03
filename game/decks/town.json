@@ -3,12 +3,12 @@
     "nick": "town_entry",
     "question": {
       "fr": "Vous entrez dans la ville...",
-      "en": "[#]"
+      "en": "you enter in the town"
     },
     "respond": [
       {
-        "fr": "C'est joli",
-        "en": "[#] 1"
+        "fr": "Woooaaaaah! Que c'est beauuuuuuu",
+        "en": "Woaaaaaaaaaah!... It's...So...Beautifull"
       }
     ]
   },
@@ -32,12 +32,12 @@
     "weight": 2,
     "question": {
       "fr": "Un mendiant vous accoste",
-      "en": "[#]"
+      "en": "a mendicant come to talk with you"
     },
     "respond": [
       {
         "fr": "Donner une pièce",
-        "en": "[#] 1",
+        "en": "give one gold",
         "sub": {
           "$money": 1
         },
@@ -45,19 +45,19 @@
       },
       {
         "fr": "Lui parler",
-        "en": "[#] 2",
+        "en": "talk with him",
         "nextindeck":"characters/hobbo"
       },
       {
         "fr": "Donner un coup de pied",
-        "en": "[#] 1",
+        "en": "hit them",
         "sub": {
           "$strenght": 1
         }
       },
       {
         "fr": "L'éviter",
-        "en": "[#] 2"
+        "en": ""
       }
     ]
   },
