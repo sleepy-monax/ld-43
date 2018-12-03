@@ -1,66 +1,5 @@
 [
   {
-    "weight": 1,
-    "question": {
-      "fr": "Des champignon: un rouge et un bleu",
-      "en": "two mushroom's: a red and a blue"
-    },
-    "respond": [
-      {
-        "fr": "Manger le rouge",
-        "en": "eat the red",
-        "nextcard": "red_mushroom"
-      },
-      {
-        "fr": "Manger le bleu",
-        "en": "eat the blue",
-        "nextcard": "blue_mushroom"
-      },
-      {
-        "fr": "Donner un coup de pied",
-        "en": "you shoot them"
-      },
-      {
-        "fr": "Fuir pour votre vie",
-        "en": "Run for your lives"
-      }
-    ]
-  },
-  {
-    "nick": "red_mushroom",
-    "question": {
-      "fr": "Vous vous sentez très léger",
-      "en": "you feel your body light"
-    },
-    "respond": [
-      {
-        "fr": "Ah!",
-        "en": "Ah!",
-        "nextindeck": "events/eat"
-      }
-    ]
-  },
-  {
-    "nick": "blue_mushroom",
-    "question": {
-      "fr": "Votre nez grandis, mais vos muscles aussi",
-      "en": "your nose grow, and your muscle too"
-    },
-    "respond": [
-      {
-        "fr": "Ah!",
-        "en": "Ah!",
-        "add": {
-          "strenght": 5
-        },
-        "sub": {
-          "charisma": 3
-        },
-        "nextindeck": "events/eat"
-      }
-    ]
-  },
-  {
     "weight": 10,
     "question": {
       "fr": "Vous gambadez dans la forêt tel un cabri",
@@ -69,55 +8,31 @@
     "respond": [
       {
         "fr": "Ouiiiiii",
-        "en": "Yeaaaaaah"
+        "en": "Yeaaaaaah",
+        "nextindeck":"events/forest"
       }
     ]
   },
   {
     "weight": 1,
     "question": {
-      "fr": "Un groupe de gobelin essaye de capturer une fée",
-      "en": "A group of goblins are trying to capture a fairy"
-    },
-    "respond": [
-      {
-        "fr": "Vous hurlez afin d'attirer l'attention",
-        "en": "You scream to get attention"
-      },
-      {
-        "fr": "Vous attaquez les gobelins",
-        "en": "You attack",
-        "nextindeck": "events/battle"
-      },
-      {
-        "fr": "Se glisser entre la fée et les gobelins pour qu'ils vous prennent à sa place",
-        "en": "[#] 2"
-      },
-      {
-        "fr": "Vous mangez une pomme d'un arbre en continuant votre chemin",
-        "en": "You eat an apple from a tree as you continue on your way",
-        "nextindeck": "events/eat"
-      }
-    ]
-  },
-  {
-    "weight": 1,
-    "question": {
-      "fr": "Une Fée cheval se pose sur votre nez",
+      "fr": "Vous approchez de la ville",
       "en": "[#]"
     },
     "respond": [
       {
-        "fr": "Vous l'écrasez avec votre main",
-        "en": "[#] 1"
-      },
-      {
-        "fr": "Vous lui soufflez dessus",
+        "fr": "Continuer votre chemin",
         "en": "[#] 2"
       },
       {
-        "fr": "Vous la fixez, les étoiles dans les yeux",
-        "en": "[#] 2"
+        "fr": "Rentrer en ville",
+        "en": "[#] 1",
+        "unlock": [
+          "town"
+        ],
+        "lock": [
+          "forest"
+        ]
       }
     ]
   },
@@ -150,138 +65,6 @@
         "fr": "Vous êtes prêts à vous battre",
         "en": "[#] 2",
         "nextindeck": "events/battle"
-      }
-    ]
-  },
-  {
-    "weight": 1,
-    "question": {
-      "fr": "Vous approchez de la ville",
-      "en": "[#]"
-    },
-    "respond": [
-      {
-        "fr": "Continuer votre chemin",
-        "en": "[#] 2"
-      },
-      {
-        "fr": "Rentrer en ville",
-        "en": "[#] 1",
-        "unlock": [
-          "town"
-        ],
-        "lock": [
-          "forest"
-        ]
-      }
-    ]
-  },
-  {
-    "weight": 1,
-    "question": {
-      "fr": "Des nymphes sont visibles proche d'un lac",
-      "en": "[#]"
-    },
-    "respond": [
-      {
-        "fr": "Vous hurlez pour faire peur",
-        "en": "[#] 1"
-      },
-      {
-        "fr": "Vous tentez de les approcher par furtivitée",
-        "en": "[#] 2"
-      },
-      {
-        "fr": "Courir après elles",
-        "en": "[#] 2"
-      },
-      {
-        "fr": "Meh! (vous continuez votre chemin)",
-        "en": "[#] 2"
-      }
-    ]
-  },
-  {
-    "weight": 0.2,
-    "question": {
-      "fr": "Vous trouvez une porte d'acier à moitiée ouverte, menant vers le bas",
-      "en": "[#]"
-    },
-    "respond": [
-      {
-        "fr": "Par curiositée, vous pénétrez dans les lieux",
-        "en": "[#] 1"
-      },
-      {
-        "fr": "Vous ne vous en occupez pas",
-        "en": "[#] 2"
-      }
-    ]
-  },
-  {
-    "weight": 1,
-    "question": {
-      "fr": "Un chien vous regarde, battant de la queue",
-      "en": "[#]"
-    },
-    "respond": [
-      {
-        "fr": "Vous le caresser",
-        "en": "[#] 1",
-        "nextindeck": "characters/doggo"
-      },
-      {
-        "fr": "Vous lui donnez un coup de pieds",
-        "en": "[#] 2"
-      },
-      {
-        "fr": "Vous aboyez",
-        "en": "[#] 2"
-      },
-      {
-        "fr": "Vous l'ignorez",
-        "en": "Don't give a fuck"
-      }
-    ]
-  },
-  {
-    "weight": 1,
-    "question": {
-      "fr": "Vous trouvez des pommes sur le sol, au pied d'un arbre",
-      "en": "[#]"
-    },
-    "respond": [
-      {
-        "fr": "Vous en mangez une",
-        "en": "[#] 1",
-        "add":{"health":2 , "charisma":2},
-        "nextindeck": "events/eat"
-      },
-      {
-        "fr": "continuer son chemin",
-        "en": "[#] 2"
-      }
-    ]
-  },
-
-  {
-    "weight":0.2 ,
-    "question": {
-      "fr": "Un monstre sur lequel est marqué Uso s'approche de vous",
-      "en": "[#]"
-    },
-    "respond": [
-      {
-        "fr": "Vous l'attaquez",
-        "en": "[#] 1"
-      },
-      {
-        "fr": "Vous fuyez",
-        "en": "[#] 1"
-      },
-      {
-        "fr": "vous touchez un de ces boutons",
-        "en":""
       }
     ]
   }
