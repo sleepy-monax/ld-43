@@ -1,13 +1,6 @@
 [
   {
     "nick": "dungeon_room_0",
-    "requirement": {
-      "equal": {},
-      "morethan": {},
-      "lessthan": {},
-      "morethanorequal": {},
-      "lessthanorequal": {}
-    },
     "question": {
       "fr": "Il fait sombre et sa sent pas bon...",
       "en": "[#]"
@@ -26,13 +19,6 @@
   },
   {
     "nick": "dungeon_room_1",
-    "requirement": {
-      "equal": {},
-      "morethan": {},
-      "lessthan": {},
-      "morethanorequal": {},
-      "lessthanorequal": {}
-    },
     "question": {
       "fr": "[#]",
       "en": "[#]"
@@ -50,13 +36,6 @@
   },
   {
     "nick": "dungeon_room_2",
-    "requirement": {
-      "equal": {},
-      "morethan": {},
-      "lessthan": {},
-      "morethanorequal": {},
-      "lessthanorequal": {}
-    },
     "question": {
       "fr": "[#]",
       "en": "[#]"
@@ -74,13 +53,6 @@
   },
   {
     "nick": "dungeon_room_3",
-    "requirement": {
-      "equal": {},
-      "morethan": {},
-      "lessthan": {},
-      "morethanorequal": {},
-      "lessthanorequal": {}
-    },
     "question": {
       "fr": "[#]",
       "en": "[#]"
@@ -98,13 +70,6 @@
   },
   {
     "nick": "dungeon_room_4",
-    "requirement": {
-      "equal": {},
-      "morethan": {},
-      "lessthan": {},
-      "morethanorequal": {},
-      "lessthanorequal": {}
-    },
     "question": {
       "fr": "[#]",
       "en": "[#]"
@@ -122,13 +87,6 @@
   },
   {
     "nick": "dungeon_room_5",
-    "requirement": {
-      "equal": {},
-      "morethan": {},
-      "lessthan": {},
-      "morethanorequal": {},
-      "lessthanorequal": {}
-    },
     "question": {
       "fr": "[#]",
       "en": "[#]"
@@ -146,13 +104,6 @@
   },
   {
     "nick": "dungeon_room_6",
-    "requirement": {
-      "equal": {},
-      "morethan": {},
-      "lessthan": {},
-      "morethanorequal": {},
-      "lessthanorequal": {}
-    },
     "question": {
       "fr": "[#]",
       "en": "[#]"
@@ -170,13 +121,6 @@
   },
   {
     "nick": "dungeon_room_7",
-    "requirement": {
-      "equal": {},
-      "morethan": {},
-      "lessthan": {},
-      "morethanorequal": {},
-      "lessthanorequal": {}
-    },
     "question": {
       "fr": "[#]",
       "en": "[#]"
@@ -194,13 +138,6 @@
   },
   {
     "nick": "dungeon_room_8",
-    "requirement": {
-      "equal": {},
-      "morethan": {},
-      "lessthan": {},
-      "morethanorequal": {},
-      "lessthanorequal": {}
-    },
     "question": {
       "fr": "[#]",
       "en": "[#]"
@@ -218,13 +155,6 @@
   },
   {
     "nick": "dungeon_exit",
-    "requirement": {
-      "equal": {},
-      "morethan": {},
-      "lessthan": {},
-      "morethanorequal": {},
-      "lessthanorequal": {}
-    },
     "question": {
       "fr": "[#]",
       "en": "[#]"
