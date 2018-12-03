@@ -8,7 +8,7 @@
     "question":
     {
       "fr": "Vous êtes mort",
-      "en": "[#]"
+      "en": "You are a little dead.."
     },
     "respond":
     [
@@ -27,7 +27,7 @@
     "question":
     {
       "fr": "Vous êtes le roi des manchots",
-      "en": "[#]"
+      "en": "You are the Pingouin king"
     },
     "respond":
     [
