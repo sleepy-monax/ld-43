@@ -4,23 +4,23 @@
       "question":
       {
         "fr": "Votre medecin vous propose de vous greffez un bras",
-        "en": "[#]"
+        "en": "your doctor purpose to add one arm"
       },
       "respond":
       [
         {
           "fr": "Oui",
-          "en": "[#] 1",
+          "en": "Yes",
           "add":{"@nbras":1, "strenght":2, "health":1}
         },
         {
           "fr": "Non",
-          "en": "[#] 1",
+          "en": "No",
           "add":{"$health":2}
         },
         {
           "fr": "Pas deux bras?",
-          "en": "[#] 1",
+          "en": "Not two arms?",
           "sub":{"$intelligence":2},
           "add":{"@nbras":2, "strenght":3}
         }
@@ -31,19 +31,19 @@
       "question":
       {
         "fr": "Votre medecin vous mordille la jambe",
-        "en": "[#]"
+        "en": "your doctor bite your legs"
       },
       "respond":
       [
         {
           "fr": "lui souhaiter bon appetit",
-          "en": "[#] 1",
+          "en": "you say: Bonne appetite ",
           "sub":{"$health":2},
           "add":{"charisma":1}
         },
         {
           "fr": "lui donner un coup de pieds",
-          "en": "[#] 1",
+          "en": "Shoot the doctor",
           "sub":{"$strenght":1}
         }
     ]
@@ -52,19 +52,19 @@
       "weight":1,
       "question":
       {
-        "fr": "Votre medecin vous propose de vous coupez un bras",
-        "en": "[#]"
+        "fr": "Votre médecin vous propose de vous coupez un bras",
+        "en": "your doctor porpose to cut your arm "
       },
       "respond":
       [
         {
           "fr": "Oui",
-          "en": "[#] 1",
+          "en": "Yes",
           "sub":{"$intelligence":2, "@nbras":1, "health":1, "strenght":1}
         },
         {
           "fr": "Non",
-          "en": "[#] 1"
+          "en": "No"
         }
     ]
   }

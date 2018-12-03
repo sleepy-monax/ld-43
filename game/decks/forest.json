@@ -3,26 +3,26 @@
     "weight": 1,
     "question": {
       "fr": "Des champignon: un rouge et un bleu",
-      "en": "[#]"
+      "en": "two mushroom's: a red and a blue"
     },
     "respond": [
       {
         "fr": "Manger le rouge",
-        "en": "[#] 1",
+        "en": "eat the red",
         "nextcard": "red_mushroom"
       },
       {
         "fr": "Manger le bleu",
-        "en": "[#] 2",
+        "en": "eat the blue",
         "nextcard": "blue_mushroom"
       },
       {
         "fr": "Donner un coup de pied",
-        "en": "[#] 4"
+        "en": "you shoot them"
       },
       {
         "fr": "Fuir pour votre vie",
-        "en": "[#] 3"
+        "en": "Run for your lives"
       }
     ]
   },
@@ -30,12 +30,12 @@
     "nick": "red_mushroom",
     "question": {
       "fr": "Vous vous sentez très léger",
-      "en": "[#]"
+      "en": "you feel your body light"
     },
     "respond": [
       {
         "fr": "Ah!",
-        "en": "[#]",
+        "en": "Ah!",
         "nextindeck": "events/eat"
       }
     ]
@@ -44,12 +44,12 @@
     "nick": "blue_mushroom",
     "question": {
       "fr": "Votre nez grandis, mais vos muscles aussi",
-      "en": "[#]"
+      "en": "your nose grow, and your muscle too"
     },
     "respond": [
       {
         "fr": "Ah!",
-        "en": "[#]",
+        "en": "Ah!",
         "add": {
           "strenght": 5
         },
