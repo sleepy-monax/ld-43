@@ -1,6 +1,6 @@
 [
   {
-    "weight": 10,
+    "weight": 2,
     "question": {
       "fr": "Vous gambadez dans la forêt tel un cabri",
       "en": "You wander through the forest like a happy little goat"
@@ -9,7 +9,51 @@
       {
         "fr": "Ouiiiiii",
         "en": "Yeaaaaaah",
-        "nextindeck":"events/forest"
+        "nextindeck": "events/forest"
+      }
+    ]
+  },
+  {
+    "weight": 2,
+    "question": {
+      "fr": "Vous êtes entourer d'arbre",
+      "en": "[#]"
+    },
+    "respond": [
+      {
+        "fr": "Continuer",
+        "en": "[#]",
+        "nextindeck": "events/forest"
+      }
+    ]
+  },
+  {
+    "weight": 2,
+    "question": {
+      "fr": "Vous passez a coté de la rivier",
+      "en": "[#]"
+    },
+    "respond": [
+      {
+        "fr": "Continuer",
+        "en": "[#]",
+        "nextindeck": "events/forest"
+      }
+    ]
+<<<<<<< HEAD
+=======
+  },
+  {
+    "weight": 2,
+    "question": {
+      "fr": "Vous voyer une écureil",
+      "en": "[#]"
+    },
+    "respond": [
+      {
+        "fr": "Continuer",
+        "en": "[#]",
+        "nextindeck": "events/forest"
       }
     ]
   },
@@ -21,11 +65,11 @@
     },
     "respond": [
       {
-        "fr": "Continuer votre chemin",
+        "fr": "Continuer dans le foret",
         "en": "[#] 2"
       },
       {
-        "fr": "Rentrer en ville",
+        "fr": "Continuer vers ville",
         "en": "[#] 1",
         "unlock": [
           "town"
@@ -35,5 +79,6 @@
         ]
       }
     ]
+>>>>>>> 196575ab37ddb80b450265854dcb28f26aca50a3
   }
 ]

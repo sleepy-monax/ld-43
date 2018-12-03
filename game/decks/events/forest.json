@@ -29,18 +29,21 @@
     "respond": [
       {
         "fr": "Vous hurlez pour faire peur",
-        "en": "[#] 1"
+        "en": "[#] 1",
+        "nextindeck": "characters/nymph"
       },
       {
         "fr": "Vous tentez de les approcher par furtivitée",
-        "en": "[#] 2"
+        "en": "[#] 2",
+        "nextindeck": "characters/nymph"
       },
       {
         "fr": "Courir après elles",
-        "en": "[#] 2"
+        "en": "[#] 2",
+        "nextindeck": "characters/nymph"
       },
       {
-        "fr": "Meh! (vous continuez votre chemin)",
+        "fr": "Vous continuez votre chemin",
         "en": "[#] 2"
       }
     ]
@@ -204,15 +207,17 @@
     "respond": [
       {
         "fr": "Vous l'attaquez",
-        "en": "[#] 1"
+        "en": "[#] 1",
+        "nextindeck": "events/battle"
+      },
+      {
+        "fr": "vous touchez un de ces boutons",
+        "en":"",
+        "nextindeck": "characters/uso"
       },
       {
         "fr": "Vous fuyez",
         "en": "[#] 1"
-      },
-      {
-        "fr": "vous touchez un de ces boutons",
-        "en":""
       }
     ]
   }
