@@ -368,19 +368,13 @@ end
 
 function button(x, y, w, h, text, alpha)
   alpha = alpha or 1
-  -- local dist = distance(x + w / 2, y + h / 2, love.mouse.getX(), love.mouse.getY())
 
   love.graphics.setLineWidth(2)
   if check_collision(x, y, w, h, love.mouse.getX(), love.mouse.getY(), 1, 1) then
     love.graphics.setColor(0.996, 0.682, 0.204, alpha)
     text = "> " .. text .. " <"
   else
-    --[[love.graphics.setColor(0.227, 0.267, 0.4, alpha)
-    love.graphics.rectangle("fill", x, y, w, h)
-    love.graphics.setColor(0.353, 0.412, 0.533, alpha)
-    love.graphics.rectangle("line", x, y, w, h)]]
     love.graphics.setColor(1, 1, 1, alpha)
-
   end
 
   local text = love.graphics.newText( assets_font_romulus, text )

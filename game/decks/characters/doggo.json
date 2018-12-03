@@ -1,14 +1,6 @@
 [
   {
     "weight": 1,
-    "requirement":
-    {
-      "equal": {},
-      "morethan": {},
-      "lessthan": {},
-      "morethanorequal": {},
-      "lessthanorequal": {}
-    },
     "question":
     {
       "fr": "Wouf!",
@@ -28,14 +20,6 @@
   },
   {
     "weight": 1,
-    "requirement":
-    {
-      "equal": {},
-      "morethan": {},
-      "lessthan": {},
-      "morethanorequal": {},
-      "lessthanorequal": {}
-    },
     "question":
     {
       "fr": "Il vous mord!",
