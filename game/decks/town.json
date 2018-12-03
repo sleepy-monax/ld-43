@@ -303,5 +303,22 @@
         "en": "Ignore"
       }
     ]
+  },
+  {
+    "weight":1 ,
+    "question": {
+      "fr": "Vous êtes proche du château",
+      "en": "you are near of the castle"
+    },
+    "respond": [
+      {
+        "fr": "s'y rendre",
+        "en": "[#] 1"
+      },
+      {
+        "fr": "continuer son chemin",
+        "en": "[#] 1"
+      }
+    ]
   }
 ]
